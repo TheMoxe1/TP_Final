@@ -24,3 +24,8 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.card-body{
+width: 70px;
+float: left;
+}

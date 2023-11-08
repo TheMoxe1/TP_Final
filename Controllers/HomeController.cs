@@ -43,4 +43,16 @@ public class HomeController : Controller
 
     // }
 
+    public IActionResult pantallaEscritor(){
+        return View();
+    }
+
+    public IActionResult inicio(){
+        return View();
+    }
+
+    public IActionResult listaSeguimiento(){
+        return View();
+    }
+
 }

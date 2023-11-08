@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="olv">
+    <h1 class="titulo">Recuperar Contraseña</h1>
+    <form action='@Url.Action("Recuperar")' method="post"> 
+        <div class="form">
+        <div class="form-floating mb-3">
+            <input id="nombre" name="nombre" type="text" class="form-control" id="floatingInput" placeholder="Username" required>
+        </div>
+        <div class="form-floating">
+            <input id="contra" name="contra" type="text" class="form-control" id="floatingPassword" placeholder="Ingrese su nueva contraseña" required>
+        </div>
+        <button type="submit" class="btn btn-success">Ingresar</button>
+        <p>@ViewBag.Error</p>
+        </div>
+        
+    </form>
+</body>
+</html>
