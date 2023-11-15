@@ -13,7 +13,7 @@ public class HomeController : Controller
         ViewBag.Error="";
         return View();
     }
-    public IActionResult Registrarse(){
+    public IActionResult registro(){
         ViewBag.Error="";
         return View();
     }
@@ -21,6 +21,20 @@ public class HomeController : Controller
         ViewBag.Error="";
         return View();
     }
+
+     public IActionResult pantallaEscritor(){
+        return View();
+    }
+
+    public IActionResult inicio(){
+        // ViewBag.ListaLibros = BD.ObtenerLibros();
+        return View();
+    }
+
+    public IActionResult listaSeguimiento(){
+        return View();
+    }
+
     // }
     // public IActionResult VerificarLogin(string Username,string Contraseña){
     //     if(BD.VerificarDatos(Username,Contraseña)){
@@ -43,16 +57,17 @@ public class HomeController : Controller
 
     // }
 
-    public IActionResult pantallaEscritor(){
-        return View();
-    }
+    //     [HttpPost] public IActionResult CrearUsuario(Usuario uss){
+    //     Usuario us = BD.verificarnombre(uss.Username);
+    //     if(us != null){
+    //         ViewBag.Error = "ERROR: Usuario ya existente";
+    //         return View("Login");
+    //     }
+    //     BD.añadirusuario(uss);
+    //     ViewBag.msj = "El usuario se ha creado correctamente";
+    //     return View("Login");
+    // }    
 
-    public IActionResult inicio(){
-        return View();
-    }
-
-    public IActionResult listaSeguimiento(){
-        return View();
-    }
+   
 
 }
