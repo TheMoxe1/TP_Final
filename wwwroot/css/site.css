@@ -151,3 +151,112 @@ float: left;
 }
 
 .registro {background-color: black; border: 2px solid #e7e7e7;}
+
+.barraSeparadora{
+  background-color: black;
+  width: 3px;
+  height: 300px;
+  position: absolute;
+  margin-left: 960px;
+  margin-top: 150px;
+}
+
+.botonGoogle{
+  background: #4285F4; /* Fallback color */
+  background: -moz-linear-gradient(45deg, #4285F4 0%, #EA4335 25%, #FBBC05 50%, #34A853 75%, #4285F4 100%);
+  background: -webkit-linear-gradient(45deg, #4285F4 0%, #EA4335 25%, #FBBC05 50%, #34A853 75%, #4285F4 100%);
+  background: linear-gradient(45deg, #4285F4 0%, #EA4335 25%, #FBBC05 50%, #34A853 75%, #4285F4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4285F4', endColorstr='#4285F4', GradientType=1);
+  border: none;
+}
+
+.botonFaceBook{
+  background-color: #3b5998;
+  border: none;
+}
+
+.botonInstagram{
+  background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  border: none;
+}
+
+.botonIniciarSesion{
+  background-color: #5FFA79;
+  border: none;
+}
+
+.viewInicio{
+  background-color: black;
+}
+
+.carruselTop{
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 140px;
+}
+
+.carruselTopItem{
+  width: 1600px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+}
+
+.carruselTopItem img{
+  width: 407.5px;
+}
+
+.carruselTopItem h3{
+  position: absolute;
+  margin-left: 430px;
+  margin-top: -570px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 40px;
+}
+
+.carruselTopItem p{
+  position: absolute;
+  margin-left: 430px;
+  margin-right: 550px;
+  margin-top: -480px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+.barraSeparadoraAutor{
+  position: absolute;
+  margin-left: 1100px;
+  margin-top: -500px;
+  background-color: #000000;
+  width: 3px;
+  height: 400px;
+}
+
+.imgAutorTop{
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  background-size: cover;
+  border-radius: 50%;
+  background-image: url(/img/jrrTolkin.jpg);
+  margin-left: 1245px;
+  margin-top: -570px;
+}
+
+.carruselTopItem h4{
+  margin-left: 1190px;
+  margin-top: -350px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.carruselTopItem h5{
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 1120px;
+  margin-right: 20px;
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
