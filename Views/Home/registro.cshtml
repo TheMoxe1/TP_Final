@@ -2,11 +2,14 @@
 <div class = "cardPrueba">
 <form onsubmit="return ChequearRegistro()" Action='@Url.Action("VerificarRegistrarse")'>
     <div class="cardText">
-    <input class="Input" type="text" name="Username" placeholder="Nombre de usuario">
-    <input onkeyup="Contra1()" class="Input" type="password" name="Contraseña" placeholder="Contraseña" id="ContraseñaRegistrar1" >
-    <input onkeyup="Contra2()"  class="Input" type="password" name="Contraseña" placeholder="Ingrese nuevamente la contraseña" id="ContraseñaRegistrar2">
-    <input class="Input" type="date" name="fechaNacimiento">
-    <input class="Input" type="text" name="email" placeholder="email">
+    <h3>Tu Nombre:</h3>
+    <input class="Input" type="text" name="Username" placeholder="Nombre y Apellido">
+    <h3>Email:</h3>    
+    <input class="Input" type="text" name="email" >
+    <h3>Contraseña:</h3>
+    <input onkeyup="Contra1()" class="Input" type="password" name="Contraseña" placeholder="Al menos 8 caracteres" id="ContraseñaRegistrar1" >
+    <h3>Vuelava a ingresa Contraseña:</h3>
+    <input onkeyup="Contra2()"  class="Input" type="password" name="Contraseña" id="ContraseñaRegistrar2">
     <input type="submit" class = "siguiente" value="Siguiente">
     </div>
 </form>
