@@ -27,3 +27,21 @@ function closeMenu() {
   document.getElementById('overlay').style.display = 'none';
   document.getElementById('menuCard').style.display = 'none';
 }
+
+document.getElementById('menuBtn').addEventListener('click', openMenu);
+
+function openMenu() {
+    var overlay = document.getElementById('overlay');
+    var menuCard = document.getElementById('menuCard');
+
+    overlay.style.display = 'block';
+    menuCard.style.display = 'block';
+  }
+
+  function closeMenu() {
+    var overlay = document.getElementById('overlay');
+    var menuCard = document.getElementById('menuCard');
+
+    overlay.style.display = 'none';
+    menuCard.style.display = 'none';
+  }
