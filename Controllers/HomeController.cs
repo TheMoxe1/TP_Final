@@ -31,6 +31,12 @@ public class HomeController : Controller
         return View();
     }
 
+        public IActionResult ayuda(){
+        // ViewBag.ListaLibros = BD.ObtenerLibros();
+        return View();
+    }
+
+
     public IActionResult listaSeguimiento(){
         return View();
     }

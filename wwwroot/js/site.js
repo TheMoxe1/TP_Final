@@ -14,3 +14,16 @@ productContainers.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 })
+
+
+document.getElementById('menuBtn').addEventListener('click', openMenu);
+
+function openMenu() {
+  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('menuCard').style.display = 'block';
+}
+
+function closeMenu() {
+  document.getElementById('overlay').style.display = 'none';
+  document.getElementById('menuCard').style.display = 'none';
+}
