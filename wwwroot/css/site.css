@@ -205,31 +205,30 @@ float: left;
   background-color: rgb(255, 255, 255);
 }
 
-.carruselTopItem img{
-  width: 407.5px;
-}
-
-.carruselTopItem h3{
+.swiper-slide h3{
   position: absolute;
-  margin-left: 430px;
-  margin-top: -570px;
+  margin-left: 420px;
+  margin-right: 580px;
+  margin-top: -580px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 40px;
+  color: rgb(0, 0, 0);
 }
 
-.carruselTopItem p{
+.swiper-slide p{
   position: absolute;
-  margin-left: 430px;
-  margin-right: 550px;
-  margin-top: -480px;
+  margin-left: 420px;
+  margin-right: 600px;
+  margin-top: -450px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
+  text-align:justify
 }
 
 .barraSeparadoraAutor{
   position: absolute;
-  margin-left: 1100px;
-  margin-top: -500px;
+  margin-left: 1030px;
+  margin-top: -510px;
   background-color: #000000;
   width: 3px;
   height: 400px;
@@ -242,21 +241,38 @@ float: left;
   background-size: cover;
   border-radius: 50%;
   background-image: url(/img/jrrTolkin.jpg);
-  margin-left: 1245px;
+  margin-left: 1200px;
   margin-top: -570px;
 }
 
-.carruselTopItem h4{
-  margin-left: 1190px;
+.imgAutorTop1{
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  background-size: cover;
+  border-radius: 50%;
+  background-image: url(/img/jkRowling.jpg);
+  margin-left: 1200px;
+  margin-top: -570px;
+}
+
+
+.swiper-slide h4{
+  margin-left: 1150px;
   margin-top: -350px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.carruselTopItem h5{
+.infoAutorInicio p{
   position: absolute;
-  margin-top: 20px;
-  margin-left: 1120px;
-  margin-right: 20px;
-  font-size: 15px;
+  margin-top: 30px;
+  margin-left: 1070px;
+  margin-right: 40px;
+  font-size: 18px;
+  text-align:justify;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.JKR{
+  margin-left: 60px;
 }

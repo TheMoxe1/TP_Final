@@ -2,40 +2,152 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>swiper demo</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <style>
+    .swiper-hero {
+      margin-top: 100px;
+      width: 1600px;
+      height: 600px;
+      background-color: white;
+    }
+
+    .swiper-hero .swiper-slide {
+      width: 250px;
+    }
+
+    .swiper-hero img {
+      height: 600px;
+      width: 400px;
+    }
+
+    .swiper-hero .swiper-button-prev,
+    .swiper-hero .swiper-button-next {
+      --swiper-navigation-size: 20px;
+      background-color: rgb(255, 255, 255);
+      height: 70px;
+      width: 50px;
+      margin-top: -35px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .swiper-hero .swiper-button-prev {
+      border-radius: 0 65px 65px 0;
+      left: -10px;
+    }
+
+    .swiper-hero .swiper-button-next {
+      border-radius: 65px 0 0 65px;
+      right: -10px;
+    }
+
+    .swiper-hero:hover .swiper-button-prev,
+    .swiper-hero:hover .swiper-button-next {
+      opacity: 1;
+    }
+
+    .swiper-hero .swiper-pagination {
+      --swiper-pagination-color: rgb(0, 0, 0);
+      --swiper-pagination-bullet-size: 6px;
+      --swiper-pagination-bullet-inactive-color: #000;
+      --swiper-pagination-bullet-inactive-opacity: 0.25;
+      --swiper-pagination-bullet-opacity: 1;
+      --swiper-pagination-bullet-horizontal-gap: 2px;
+    }
+
+    .swiper-hero .swiper-pagination-bullet {
+      box-shadow: inset 0 0 0 1px #fff;
+    }
+
+    .swiper-hero .swiper-pagination-bullet-active {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    }
+    
+  </style>
 </head>
 
 <body class="viewInicio">
-  <div class="carruselTop">
-    <div class="carruselTopItem">
-      <img class="portadaLibro" src="/img/lotr.jpg" alt="">
-      <h3>El señor de los Anillos</h3>
-      <p>En la Tierra Media, el Señor Oscuro Sauron forjó los Grandes Anillos del Poder y 
-        creó uno con el poder de esclavizar a toda la Tierra Media. Frodo Bolsón es un 
-        hobbit al que su tío Bilbo hace portador del poderoso Anillo Único con la misión 
-        de destruirlo. Acompañado de sus amigos, Frodo emprende un viaje hacia Mordor, el 
-        único lugar donde el anillo puede ser destruido. Sin embargo, Sauron ordena la persecución 
-        del grupo para recuperar el anillo y acabar con la Tierra Media.</p>
-      <div class="barraSeparadoraAutor"></div>
-      <div class="imgAutorTop"></div>
-      <h4>John Ronald Reuel Tolkien</h4>
-      <h5>John Ronald Reuel Tolkien, a menudo citado como J. R. R. Tolkien 
-        o JRRT, fue un escritor, poeta, filólogo, lingüista y profesor universitario 
-        británico, nacido en el Estado Libre de Orange. Conocido principalmente por 
-        ser el autor de El hobbit y El Señor de los Anillos.</h5>
-    </div>
+  <div class="swiper swiper-hero">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img class="portadaLibro" src="/img/lotr.jpg" alt="">
+        <h3>El señor de los Anillos</h3>
+        <p>En la Tierra Media, el Señor Oscuro Sauron forjó los Grandes Anillos del Poder y
+          creó uno con el poder de esclavizar a toda la Tierra Media. Frodo Bolsón es un
+          hobbit al que su tío Bilbo hace portador del poderoso Anillo Único con la misión
+          de destruirlo. Acompañado de sus amigos, Frodo emprende un viaje hacia Mordor, el
+          único lugar donde el anillo puede ser destruido. Sin embargo, Sauron ordena la persecución
+          del grupo para recuperar el anillo y acabar con la Tierra Media.</p>
+        <div class="barraSeparadoraAutor"></div>
+        <div class="imgAutorTop"></div>
+        <h4>John Ronald Reuel Tolkien</h4>
+        <div class="infoAutorInicio">
+          <p>John Ronald Reuel Tolkien, a menudo citado como J. R. R. Tolkien o JRRT, fue un escritor, poeta, filólogo,
+            lingüista y profesor universitario
+            británico, nacido en el Estado Libre de Orange. Conocido principalmente por
+            ser el autor de El hobbit y El Señor de los Anillos.</p>
+        </div>
+      </div>
 
-    <div class="carruselTopItem">
-      
-    </div>
+      <div class="swiper-slide">
+          <img class="portadaLibro" src="/img/prisioneroAzkaban.jpg" alt="">
+        <h3>Harry Potter y el Prisionero de Azkaban</h3>
+        <p>Harry aguarda con impaciencia el inicio del tercer curso en el Colegio Hogwarts de Magia y Hechicería. Tras haber cumplido trece años, solo y lejos de sus amigos de Hogwarts, Harry se pelea con su bigotuda tía Marge, a la que convierte en globo, y debe huir en un autobús mágico. Mientras tanto, de la prisión de Azkaban se ha escapado un terrible villano, Sirius Black, un asesino en serie con poderes mágicos que fue cómplice de lord Voldemort y que parece dispuesto a eliminar a Harry del mapa. Y por si esto fuera poco, Harry debe enfrentarse también a unos terribles monstruos, los dementores, seres abominables capaces de robarles la felicidad a los magos y de borrar todo recuerdo hermoso de aquellos que osan mirarlos. Lo que ninguno de estos malvados personajes sabe es que Harry, con la ayuda de sus fieles amigos Ron y Hermione, es capaz de todo y mucho más.</p>
+        <div class="barraSeparadoraAutor"></div>
+        <div class="imgAutorTop1"></div>
+        <div class="JKR">
+          <h4>Joanne Rowling​</h4>
+        </div>
+        
+        <div class="infoAutorInicio">
+          <p>Joanne Rowling​, quien escribe bajo los seudónimos de J. K. Rowling​ y Robert Galbraith, es una escritora, productora de cine y guionista británica, conocida por ser la autora de la serie de libros Harry Potter, que han superado los quinientos millones de ejemplares vendidos.</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
 
-    <div class="carruselTopItem">
+      </div>
+      <div class="swiper-slide">
 
+      </div>
+      <div class="swiper-slide">
+
+      </div>
     </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper-hero", {
+      direction: "horizontal",
+      loop: true,
+      autoplay: {
+        delay: 10000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      },
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+    });
+  </script>
 </body>
 
 </html>
