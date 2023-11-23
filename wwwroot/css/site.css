@@ -93,9 +93,9 @@ float: left;
 .topnav{
   padding-top: 20px;
   margin-top: -15px;
-  background-color: black;
+  background-color: rgb(80, 71, 71);
   width: 1922px;
-  height: 80px;
+  height: 63px;
   align-items: center;
   margin-left: -30px;
 }
@@ -684,6 +684,11 @@ body {
   width: 400px;
 }
 
+.portadaLibro { 
+  height: 600px;
+  width: 400px;
+}
+
 .swiper-hero .swiper-button-prev,
 .swiper-hero .swiper-button-next {
   --swiper-navigation-size: 20px;
@@ -755,3 +760,57 @@ body {
   margin-bottom: 30px;
 }
 /*fin estrellas*/
+
+
+
+/*Pantalla del libro*/
+
+.pLibro {
+  background-color: black;
+}
+
+.sinopsis{
+  width: 580px;
+}
+
+.datAutor{
+  width: 490px;
+}
+
+.SwipLibro h4{
+  width: 400px;
+}
+
+
+.panLibro {
+  margin-left: 118px;
+}
+
+.flexGeneros {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 600px;
+  position: absolute;
+  top: 710px;
+  left: 530px;
+}
+
+.flexGeneros div{
+  background-color: rgb(160, 157, 157);
+  border-radius: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.plibroAutor img{
+  height: 130px;
+  width: 130px;
+  position: absolute;
+  top: 180px;
+  right: 550px;
+  border-radius: 100px;
+}
+
+/*Fin pantalla libro */

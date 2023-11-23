@@ -41,6 +41,10 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult pantallaLibro(){
+        return View();
+    }
+
     // }
     // public IActionResult VerificarLogin(string Username,string Contraseña){
     //     if(BD.VerificarDatos(Username,Contraseña)){
