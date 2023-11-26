@@ -5,14 +5,51 @@
   <div class="topnav">
     <a href='@Url.Action("inicio")'><img src="~/img/Logo.png" alt="logo" height="40px" width="60px"></a>
     <span id="menuBtn">&#9776; Menu</span>
-    <input type="text" placeholder="Buscar">
+       <input type="search" id="input-search" placeholder="Buscar">
     <a class="divnav" href="inicio">Libros</a>
     <a class="divnav" href="premios">Premios</a>
     <a class="divnav" href="pantallaGenero">Generos</a>
     <a class="divnav" href="ayuda">Ayuda</a>
     <a class="divnav" href='@Url.Action("pantallaLibro")'>Plibro</a>
   </div>
+  
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/search.js"></script>
 
+  <div class="content-search">
+    <div class="content-table">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="#">Harry Potter y la piedra filosofal</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>
+              <a href="#">Rick And Morty</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>
+              <a href="#">Harry Potter las reliquias de la muerte</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@ViewData["Title"] - TPXX - Apellido</title>
