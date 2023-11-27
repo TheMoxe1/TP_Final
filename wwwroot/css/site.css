@@ -892,7 +892,7 @@ body {
   margin-right: 85px;
   margin-left: 85px;
   margin-top: 30px;
-  height: 200px;
+  height: 250px;
   background-color: rgb(179, 179, 179);
 }
 
@@ -906,6 +906,17 @@ body {
 
 .ReseñaUsuario h3{
   color: green;
+  position: absolute;
+  top: 1140px;
+  left: 320px;
+}
+
+.ReseñaUsuario p{
+  width: 550px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 10px;
+  font-size: 15px;
 }
 
 .ReseñasFlex{
@@ -916,6 +927,19 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.PonerReseña{
+  background-color: rgb(26, 202, 26);
+  width: 110px;
+  height: 60px;
+  margin-left: 110px;
+  margin-top: 20px;
+  border-radius: 15%;
+}
+
+.PonerReseña h5{
+  padding: 8px;
 }
 
 /*Fin pantalla libro*/
