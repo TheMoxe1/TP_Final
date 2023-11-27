@@ -69,20 +69,16 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult verLibro(int L)
+    public IActionResult pantallaLibro (int L)
     {
         ViewBag.Libro = BD.obtenerLibro(L);
-        return View("pantallaLibro");
-    }
-    public IActionResult pantallaLibro(int idReseña)
-    {
-        ViewBag.ListaReseñas = BD.obtenerReseñas(idReseña);
         return View();
     }
 
-    public string VerReseña(int idR, int idL, int idU)
+
+    public ReseñaUsuario VerReseña(int idL)
     {
-        return BD.ObtenerReseñaPorLibroPorUsuario(idR, idL, idU);
+        return BD.obtenerReseñasUs(idL); 
     }
     public IActionResult listaSeguimiento()
     {

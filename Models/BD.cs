@@ -7,9 +7,9 @@ public class BD{
       private static string _connectionString = @"Server=LocalHost;DataBase=IBDb;Trusted_Connection=True;";
 
       public static void añadirusuario(Usuario u){
-        string sql = "INSERT INTO Usuarios(Nombre, Contrasena, Gmail, Email, Genero1) VALUES (@cNombre, @cContrasena, @cGmail, @cGeneroFav)";
+        string sql = "INSERT INTO Usuarios(Nombre, Contrasena, Gmail, Email, Genero1, Genero2, Genero3, Genero4, Genero5) VALUES (@cNombre, @cContrasena, @cGmail, @cGenero1, @cGenero2, @cGenero3, @cGenero4, @cGenero5)";
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            db.Execute(sql, new{cUsername = u.Nombre, cContrasena = u.Contrasena, cGmail = u.Gmail, cGeneroFav = u.Genero1});
+            db.Execute(sql, new{cUsername = u.Nombre, cContrasena = u.Contrasena, cGmail = u.Gmail, cGenero1 = u.Genero1, cGenero2 = u.Genero2, cGenero3 = u.Genero3, cGenero4 = u.Genero4, cGenero5 = u.Genero5});
         }
     }
 public static Usuario verificarUsuario(string Nombre, string Contra){
@@ -21,7 +21,7 @@ public static Usuario verificarUsuario(string Nombre, string Contra){
         return veriUsuario;
     }
 
-           public static Usuario verificarnombre(string Nombre){
+        public static Usuario verificarnombre(string Nombre){
         Usuario veriUsuario = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
             string sql = "SELECT * FROM Usuarios WHERE Nombre = @nombre";
@@ -36,10 +36,10 @@ public static Usuario verificarUsuario(string Nombre, string Contra){
         }
     }
 
-     public static List<Libro> enlistarLibros(){
+     public static List<Libro> enlistarLibros(){//Tendria sentido que reciba generos o autor para filtrar pq mucho sentido no tiene agarrar todo
         List<Libro> ListaLibros = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT * FROM Libro";
+            string sql = "SELECT L.IdLibro, L.Nombre, L.Tapa, G1.Nombre AS Genero1Nombre,G2.Nombre AS Genero2Nombre, G3.Nombre AS Genero3Nombre, G4.Nombre AS Genero4Nombre, G5.Nombre AS Genero5Nombre, L.AnoPublicacion, L.Sinopsis, R.Reseña1, R.Reseña2, R.Reseña3, R.Reseña4, R.Reseña5, R.ReseñasTotales FROM Libro L INNER JOIN Generos G1 ON L.Genero1 = G1.IdGenero LEFT JOIN Generos G2 ON L.Genero2 = G2.IdGenero LEFT JOIN Generos G3 ON L.Genero3 = G3.IdGenero LEFT JOIN Generos G4 ON L.Genero4 = G4.IdGenero LEFT JOIN Generos G5 ON L.Genero5 = G5.IdGenero INNER JOIN Reseñas R ON R.IdLibro = L.IdLibro";
             ListaLibros = db.Query<Libro>(sql).ToList();
         }
         return ListaLibros;
@@ -47,34 +47,34 @@ public static Usuario verificarUsuario(string Nombre, string Contra){
 public static Libro obtenerLibro(int idLibro){
 Libro L = null;
 using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT * FROM Libro WHERE idLibro = @IdLibro";
+            string sql = "SELECT L.IdLibro, L.Nombre, L.Tapa, G1.Nombre AS Genero1Nombre,G2.Nombre AS Genero2Nombre, G3.Nombre AS Genero3Nombre, G4.Nombre AS Genero4Nombre, G5.Nombre AS Genero5Nombre, A.Nombre AS NombreEscritor, A.Biografia AS BioEscritor, A.Foto AS FotoEscritor, L.AnoPublicacion, L.Sinopsis, R.Reseña1, R.Reseña2, R.Reseña3, R.Reseña4, R.Reseña5, R.ReseñasTotales FROM Libro L INNER JOIN Generos G1 ON L.Genero1 = G1.IdGenero LEFT JOIN Generos G2 ON L.Genero2 = G2.IdGenero LEFT JOIN Generos G3 ON L.Genero3 = G3.IdGenero LEFT JOIN Generos G4 ON L.Genero4 = G4.IdGenero LEFT JOIN Generos G5 ON L.Genero5 = G5.IdGenero INNER JOIN Escritor A ON A.IdEscritor = L.IdEscritor INNER JOIN Reseñas R ON R.IdLibro = L.IdLibro WHERE idLibro = @IdLibro";
             L = db.QueryFirstOrDefault<Libro>(sql, new{IdLibro = idLibro});
         }
     return L;
 }
 
-public static Reseñas obtenerReseñas(int idLibro){
-Reseñas R = null;
+public static ReseñaUsuario obtenerReseñasUs(int idLibro){
+ReseñaUsuario R = null;
 using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT * FROM Reseñas WHERE idLibro = @IdLibro";
-            R = db.QueryFirstOrDefault<Reseñas>(sql, new{IdLibro = idLibro});
+            string sql = "SELECT R.Reseña, R.Testo, U.Nombre, U.Foto FROM ReseñaUsuario INNER JOIN Usuario U ON U.IdUsuario = R.IdUsuario WHERE idLibro = @IdLibro";
+            R = db.QueryFirstOrDefault<ReseñaUsuario>(sql, new{IdLibro = idLibro});
         }
     return R;
 }
 
-public static string ObtenerReseñaPorLibroPorUsuario(int idReseña, int idLibro, int idUsuario){
-    string reseña = "";
+public static void añadirSeguimiento(int idUsuario, int idLibro){
+    string sql = "INSERT INTO Seguimiento(IdLibro, IdUsuario) VALUES (@cIdLibro, @cIdUsuario)";
     using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT Testo FROM ReseñaUsuario WHERE idReseña = @IdReseña AND idLibro = @IdLibro AND idUsuario = @IdUsuario";
-            reseña = db.QueryFirstOrDefault<string>(sql, new{idReseña = idReseña, IdLibro = idLibro, IdUsuario = idUsuario});;
-        }
-    return reseña;
-}
-
-      public static void añadirSeguimiento(int idUsuario, int idLibro){
-        string sql = "INSERT INTO Seguimiento(IdLibro, IdUsuario) VALUES (@cIdLibro, @cIdUsuario, @cSeguir)";
-        using(SqlConnection db = new SqlConnection(_connectionString)){
-            db.Execute(sql, new{cIdLibro = idLibro, cIdUsuario = idUsuario, cSeguir = 1});
-        }
+        db.Execute(sql, new{cIdLibro = idLibro, cIdUsuario = idUsuario });
+    }
     }
 }
+
+
+//public static void EliminarSeguimiento(int idUsuario, int idLibro){
+//    string sql = "DELETE * FROM Seguiminiento WHERE IdLibro = cIdLibro AND IdUsuario = cIdUsuario";
+//    using(SqlConnection db = new SqlConnection(_connectionString)){
+//        db.Execute(sql, new{cIdLibro = idLibro, cIdUsuario = idUsuario });
+//    }
+//    }
+//} pq da error 
