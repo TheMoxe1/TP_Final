@@ -66,7 +66,11 @@ public class HomeController : Controller
 
     public IActionResult inicio()
     {
-        ViewBag.ListaLibros = BD.enlistarLibrosXGenero();
+        ViewBag.carousel1 = BD.obtenerLibroRandom();
+        ViewBag.carousel2 = BD.obtenerLibroRandom();
+        ViewBag.carousel3 = BD.obtenerLibroRandom();
+        ViewBag.ListaGeneros = BD.enlistarLibrosXGenero();
+        ViewBag.ListaReseñas = BD.enlistarLibrosXReseña();
         return View();
     }
 
