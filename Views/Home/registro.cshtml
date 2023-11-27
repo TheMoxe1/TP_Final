@@ -7,18 +7,50 @@
 </head>
 <body>
     <div class="cardPrueba">
-        <form onsubmit="return ChequearRegistro()" Action='@Url.Action("VerificarRegistrarse")'>
+        <form onsubmit="return ChequearRegistro()" Action='@Url.Action("CrearUsuario")' method="post">
             <div class="cardText">
                 <h3>Tu Nombre:</h3>
-                <input class="Input" type="text" name="Username" placeholder="Nombre y Apellido">
+                <input class="Input" type="text" name="Nombre" id="Nombre" placeholder="Nombre y Apellido" required>
                 <h3>Email:</h3>
-                <input class="Input" type="text" name="email">
+                <input class="Input" type="text" name="Gmail" id="Gmail" placeholder="Email" required>
                 <h3>Contraseña:</h3>
-                <input onkeyup="Contra1()" class="Input" type="password" name="Contraseña"
-                    placeholder="Al menos 8 caracteres" id="ContraseñaRegistrar1">
+                <input onkeyup="Contra1()" class="Input" type="password" name="Contrasena" 
+                    placeholder="Al menos 8 caracteres" id="Contrasena" required>
                 <h3>Vuelava a ingresa Contraseña:</h3>
-                <input onkeyup="Contra2()" class="Input" type="password" name="Contraseña" id="ContraseñaRegistrar2">
-                <input type="submit" class="siguiente" value="Siguiente">
+                <input onkeyup="Contra2()" class="Input" type="password" name="Contrasena" id="Contrasena" required>
+                <h3>Elija sus generos favoritos(Min 1, Max 5):</h3>
+               <select type="button" data-bs-toogle="dropdown" name="Genero1" aria-expanded="false" required>
+                <option>Seleccione Genero</option>
+           @foreach(Generos g in ViewBag.Generos){
+            <option value="@g.IdGenero">@g.Nombre</option>
+           }
+           </select>
+               <select type="button" data-bs-toogle="dropdown" name="Genero2" aria-expanded="false">
+                               <option>Seleccione Genero</option>
+           @foreach(Generos g in ViewBag.Generos){
+            <option value="@g.IdGenero">@g.Nombre</option>
+           }
+           </select>
+               <select type="button" data-bs-toogle="dropdown" name="Genero3" aria-expanded="false">
+                <option>Seleccione Genero</option>
+           @foreach(Generos g in ViewBag.Generos){
+            <option value="@g.IdGenero">@g.Nombre</option>
+           }
+           </select>
+               <select type="button" data-bs-toogle="dropdown" name="Genero4" aria-expanded="false">
+                               <option>Seleccione Genero</option>
+           @foreach(Generos g in ViewBag.Generos){
+            <option value="@g.IdGenero">@g.Nombre</option>
+           }
+           </select>
+               <select type="button" data-bs-toogle="dropdown" name="Genero5" aria-expanded="false">
+                               <option>Seleccione Genero</option>
+           @foreach(Generos g in ViewBag.Generos){
+            <option value="@g.IdGenero">@g.Nombre</option>
+           }
+           </select>
+                <button type="submit" class="siguiente">Siguiente</button>
+
             </div>
         </form>
     </div>

@@ -26,6 +26,7 @@ public class HomeController : Controller
     }
     public IActionResult registro()
     {
+        ViewBag.Generos = BD.enlistarGeneros();
         ViewBag.Error = "";
         return View();
     }
@@ -36,13 +37,13 @@ public class HomeController : Controller
         if (us != null)
         {
             ViewBag.Error = "ERROR: Usuario ya existente";
-            return View("registro");
+            return RedirectToAction("registro");
         }
         else
         {
             BD.añadirusuario(uss);
             ViewBag.msj = "El usuario se ha creado correctamente";
-            return View("inicio");
+            return View("index");
         }
     }
     public IActionResult olvideContraseña(string nombre, string contra)
