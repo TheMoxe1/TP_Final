@@ -779,11 +779,26 @@ body {
 }
 
 .sinopsis{
+  padding-top: 50px;
   width: 580px;
+}
+
+.estrellas{
+  color: green;
+  position: absolute;
+  top: 250px;
+  left: 550px;
+}
+
+.cantreseñas{
+  position: absolute;
+  top: 290px;
+  left: 550px;
 }
 
 .datAutor{
   width: 490px;
+  top: 300px;
 }
 
 .SwipLibro h4{
@@ -822,7 +837,88 @@ body {
   border-radius: 100px;
 }
 
-/*Fin pantalla libro */
+.Nautor{
+  position: absolute;
+  top: 580px;
+  right: 135px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.maslibrosautor{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 530px;
+  right: 170px;
+}
+
+.maslibrosautor h5{
+  color: black;
+  width: 300px;
+  position: absolute;
+  top: -45px;
+  right: 214px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.maslibrosautor img{
+  margin-left: 12px;
+  margin-right: 12px;
+  height: 200px;
+  width: 150px;
+}
+
+.ReseñasImportante{
+  background-color: rgb(179, 179, 179);
+  width: 1600px;
+  height: 200px;
+  margin-left: 118px;
+  margin-top: 20px;
+}
+
+.ReseñasImportante p{
+  line-height: 30px;
+  width: 1550px;
+  margin-left: 10px;
+}
+
+.ReseñasImportante h4{
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+.ReseñaUsuario{
+  width: 600px;
+  margin-right: 85px;
+  margin-left: 85px;
+  margin-top: 30px;
+  height: 200px;
+  background-color: rgb(179, 179, 179);
+}
+
+.ReseñaUsuario img{
+  width: 80px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.ReseñaUsuario h3{
+  color: green;
+}
+
+.ReseñasFlex{
+  height: auto;
+  width: 1600px;
+  margin-left: 118px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*Fin pantalla libro*/
 
 
 /*Inicio Buscador*/

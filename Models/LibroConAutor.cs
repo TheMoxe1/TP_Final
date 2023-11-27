@@ -1,4 +1,4 @@
-public class Libro{
+public class LibroConAutor{
     public int IdLibro{get;set;}
     public string Nombre{get;set;}
     public string Tapa{get;set;}
@@ -8,6 +8,9 @@ public class Libro{
     public string Genero3Nombre{get;set;}
     public string Genero4Nombre{get;set;}
     public string Genero5Nombre{get;set;}
+    public string NombreEscritor{get;set;}
+    public string BioEscritor{get;set;}
+    public string FotoEscritor{get;set;}
     public DateTime AnoPublicacion{get;set;}
     public string Sinopsis{get;set;}
     public int Reseña1{get;set;}
