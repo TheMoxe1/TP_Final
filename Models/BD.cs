@@ -7,15 +7,15 @@ public class BD{
       private static string _connectionString = @"Server=LocalHost;DataBase=IBDb;Trusted_Connection=True;";
 
       public static void añadirusuario(Usuario u){
-        string sql = "INSERT INTO Usuarios(Nombre, Contrasena, Gmail, Email, Genero1, Genero2, Genero3, Genero4, Genero5) VALUES (@cNombre, @cContrasena, @cGmail, @cGenero1, @cGenero2, @cGenero3, @cGenero4, @cGenero5)";
+        string sql = "INSERT INTO Usuario(Nombre, Contrasena, Gmail, Genero1, Genero2, Genero3, Genero4, Genero5) VALUES (@cNombre, @cContrasena, @cGmail, @cGenero1, @cGenero2, @cGenero3, @cGenero4, @cGenero5)";
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            db.Execute(sql, new{cUsername = u.Nombre, cContrasena = u.Contrasena, cGmail = u.Gmail, cGenero1 = u.Genero1, cGenero2 = u.Genero2, cGenero3 = u.Genero3, cGenero4 = u.Genero4, cGenero5 = u.Genero5});
+            db.Execute(sql, new{cNombre = u.Nombre, cContrasena = u.Contrasena, cGmail = u.Gmail, cGenero1 = u.Genero1, cGenero2 = u.Genero2, cGenero3 = u.Genero3, cGenero4 = u.Genero4, cGenero5 = u.Genero5});
         }
     }
 public static Usuario verificarUsuario(string Nombre, string Contra){
         Usuario veriUsuario = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT * FROM Usuarios WHERE Nombre = @nombre and Contrasena = @contra";
+            string sql = "SELECT * FROM Usuario WHERE Nombre = @nombre and Contrasena = @contra";
             veriUsuario = db.QueryFirstOrDefault<Usuario>(sql, new{nombre = Nombre, contra = Contra});       
         }
         return veriUsuario;
@@ -24,14 +24,14 @@ public static Usuario verificarUsuario(string Nombre, string Contra){
         public static Usuario verificarnombre(string Nombre){
         Usuario veriUsuario = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT * FROM Usuarios WHERE Nombre = @nombre";
+            string sql = "SELECT * FROM Usuario WHERE Nombre = @nombre";
             veriUsuario = db.QueryFirstOrDefault<Usuario>(sql, new{nombre = Nombre});       
         }
         return veriUsuario;
     }
     public static void cambiarContraseña(string Nombre, string contra){
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "UPDATE Usuarios SET Contrasena = @Contra WHERE Nombre = @nombre";
+            string sql = "UPDATE Usuario SET Contrasena = @Contra WHERE Nombre = @nombre";
             db.Execute(sql, new{Contra = contra, nombre = Nombre});    
         }
     }
@@ -68,7 +68,16 @@ public static void añadirSeguimiento(int idUsuario, int idLibro){
         db.Execute(sql, new{cIdLibro = idLibro, cIdUsuario = idUsuario });
     }
     }
+        public static List<Generos> enlistarGeneros(){
+        List<Generos> ListaGeneros = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM Generos";
+            ListaGeneros = db.Query<Generos>(sql).ToList();
+        }
+        return ListaGeneros;
+    }
 }
+
 
 
 //public static void EliminarSeguimiento(int idUsuario, int idLibro){
