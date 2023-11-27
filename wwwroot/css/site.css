@@ -996,3 +996,16 @@ tbody tr td a:hover{
 }
 
 /*Fin Buscador*/
+
+/*Inicio Lista Seguimineto*/
+
+.LibroSeguido{
+  border: 2px black solid;
+  width: 1200px;
+  margin-left: 330px;
+  margin-top: 30px;
+  height: 200px;
+}
+
+
+/*Fin Lista Seguimiento*/
