@@ -66,7 +66,7 @@ public class HomeController : Controller
 
     public IActionResult inicio()
     {
-        ViewBag.ListaLibros = BD.enlistarLibros();
+        ViewBag.ListaLibros = BD.enlistarLibrosXGenero();
         return View();
     }
 
