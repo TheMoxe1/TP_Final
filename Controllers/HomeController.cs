@@ -71,6 +71,15 @@ public class HomeController : Controller
         ViewBag.carousel3 = BD.obtenerLibroRandom();
         ViewBag.ListaGeneros = BD.enlistarLibrosXGenero();
         ViewBag.ListaReseñas = BD.enlistarLibrosXReseña();
+        if(ViewBag.carousel1.FotoEscritor == null){
+            ViewBag.carousel1.FotoEscritor = "~/img/perfil-de-usuario.webp";
+        }
+        if(ViewBag.carousel2.FotoEscritor == null){
+            ViewBag.carousel2.FotoEscritor = "~/img/perfil-de-usuario.webp";
+        }
+        if(ViewBag.carousel3.FotoEscritor == null){
+            ViewBag.carousel3.FotoEscritor = "~/img/perfil-de-usuario.webp";
+        }
         return View();
     }
 

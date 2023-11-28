@@ -304,7 +304,6 @@ float: left;
   height: 210px;
   background-size: cover;
   border-radius: 50%;
-  background-image: url(/img/jrrTolkin.jpg);
   margin-left: 1200px;
   margin-top: -570px;
 }
@@ -716,10 +715,6 @@ body {
   width: 250px;
 }
 
-.swiper-hero img {
-  height: 600px;
-  width: 400px;
-}
 
 .portadaLibro { 
   height: 600px;
