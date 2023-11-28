@@ -38,12 +38,12 @@ public static Usuario verificarUsuario(string Nombre, string Contra){
         }
     }
 
-     public static List<Libro> enlistarLibrosXGenero(){//Tendria sentido que reciba generos o autor para filtrar pq mucho sentido no tiene agarrar todo
+     public static List<Libro> enlistarLibrosXGenero(){
         List<Libro> ListaLibros = null;
         Random random = new Random();
         int rNumber = random.Next(0, 21);
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT L.IdLibro, L.Nombre, L.Tapa, G1.Nombre AS Genero1Nombre,G2.Nombre AS Genero2Nombre, G3.Nombre AS Genero3Nombre, G4.Nombre AS Genero4Nombre, G5.Nombre AS Genero5Nombre, L.AnoPublicacion, L.Sinopsis, R.Reseña1, R.Reseña2, R.Reseña3, R.Reseña4, R.Reseña5, R.ReseñasTotales FROM Libro L INNER JOIN Generos G1 ON L.Genero1 = G1.IdGenero LEFT JOIN Generos G2 ON L.Genero2 = G2.IdGenero LEFT JOIN Generos G3 ON L.Genero3 = G3.IdGenero LEFT JOIN Generos G4 ON L.Genero4 = G4.IdGenero LEFT JOIN Generos G5 ON L.Genero5 = G5.IdGenero INNER JOIN Reseñas R ON R.IdLibro = L.IdLibro WHERE L.Genero1=@crNumber";
+            string sql = "SELECT L.IdLibro, L.Nombre, L.Tapa, G1.Nombre AS Genero1Nombre,G2.Nombre AS Genero2Nombre, G3.Nombre AS Genero3Nombre, G4.Nombre AS Genero4Nombre, G5.Nombre AS Genero5Nombre, L.AnoPublicacion, L.Sinopsis, R.Reseña1, R.Reseña2, R.Reseña3, R.Reseña4, R.Reseña5, R.ReseñasTotales FROM Libro L INNER JOIN Generos G1 ON L.Genero1 = G1.IdGenero LEFT JOIN Generos G2 ON L.Genero2 = G2.IdGenero LEFT JOIN Generos G3 ON L.Genero3 = G3.IdGenero LEFT JOIN Generos G4 ON L.Genero4 = G4.IdGenero LEFT JOIN Generos G5 ON L.Genero5 = G5.IdGenero INNER JOIN Reseñas R ON R.IdLibro = L.IdLibro WHERE L.Genero1= @crNumber OR L.Genero2 = @crNumber OR L.Genero3 = @crNumber OR L.Genero4 = @crNumber OR L.Genero5 = @crNumber";
             ListaLibros = db.Query<Libro>(sql, new {crNumber = rNumber}).ToList();
         }
         return ListaLibros;
