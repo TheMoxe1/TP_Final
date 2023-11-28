@@ -78,7 +78,7 @@
   </script>
 
   <section class="product">
-    <h2 class="product-category"></h2>
+    <h2 class="product-category">@ViewBag.ListaGeneros[1].Genero1Nombre</h2>
     <button class="pre-btn">
       <div class="swiper-button-prev"></div>
     </button>
@@ -86,102 +86,65 @@
       <div class="swiper-button-next"></div>
     </button>
     <div class="product-container">
-      <div class="product-card">
-        <div class="product-image">
-          <img src="/img/prisioneroAzkaban.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
+      @for(int x = 0; x < ViewBag.ListaGeneros.Count; x++){
+        <div class="product-card">
+          <div class="product-image">
+            <img src=@ViewBag.ListaGeneros[x].Tapa class="product-thumb" alt="">
+            <button class="card-btn">add to wishlist</button>
         </div>
         <div class="product-info">
-          <div class="app">
-            <div class="rating">
-              <div class="rating_average">
-                <h1>5.0</h1>
-                <div class="star-outer">
-                  <div class="star-inner"></div>
+            <div class="app">
+                <div class="rating">
+                    <div class="rating_average">
+                        <h1>@ViewBag.ListaGeneros[x].promedioPuntuacion</h1>
+                        <div class="star-outer">
+                            <div class="star-inner"></div>
+                        </div>
+                    </div>
+                    <div class="rating_progress">
+                    </div>
                 </div>
-              </div>
-              <div class="rating_progress">
-              </div>
             </div>
-          </div>
-          <h2 class="product-brand">Harry Potter y el prisionero de Azkaban</h2>
+            <h2 class="product-brand">@ViewBag.ListaGeneros[x].Nombre</h2>
         </div>
-      </div>
-
-      
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/card3.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">brand</h2>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/card4.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">brand</h2>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/card5.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">brand</h2>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/card6.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">brand</h2>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="/img/card7.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">brand</h2>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/card8.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">brand</h2>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/card9.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">brand</h2>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/card10.jpg" class="product-thumb" alt="">
-          <button class="card-btn">add to wishlist</button>
-        </div>
-        <div class="product-info">
-          <h2 class="product-brand">brand</h2>
-        </div>
-      </div>
     </div>
+    }     
+ 
+  </section>
+
+  <section class="product">
+    <h2 class="product-category">Con mas Reseñas</h2>
+    <button class="pre-btn">
+      <div class="swiper-button-prev"></div>
+    </button>
+    <button class="nxt-btn">
+      <div class="swiper-button-next"></div>
+    </button>
+    <div class="product-container">
+      @for(int x = 0; x < ViewBag.ListaReseñas.Count; x++){
+        <div class="product-card">
+          <div class="product-image">
+            <img src=@ViewBag.ListaReseñas[x].Tapa class="product-thumb" alt="">
+            <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+            <div class="app">
+                <div class="rating">
+                    <div class="rating_average">
+                        <h1>@ViewBag.ListaReseñas[x].promedioPuntuacion</h1>
+                        <div class="star-outer">
+                            <div class="star-inner"></div>
+                        </div>
+                    </div>
+                    <div class="rating_progress">
+                    </div>
+                </div>
+            </div>
+            <h2 class="product-brand">@ViewBag.ListaReseñas[x].Nombre</h2>
+        </div>
+    </div>
+    }     
+ 
   </section>
 </body>
 </html>

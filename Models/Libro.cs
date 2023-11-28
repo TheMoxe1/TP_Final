@@ -16,4 +16,6 @@ public class Libro{
     public int Reseña4{get;set;}
     public int Reseña5{get;set;}
     public int ReseñasTotales{get;set;}
+
+    public double promedioPuntuacion{get;set;}
 }
