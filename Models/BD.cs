@@ -102,6 +102,24 @@ public static void añadirSeguimiento(int idUsuario, int idLibro){
         }
         return ListaGeneros;
     }
+
+    public static void añadirReseña(ReseñaUsuario RU){
+         string sql = "INSERT INTO ReseñaUsuario(IdUsuario, IdLibro, Reseña, Testo) VALUES(@cIdUsuario, @cIdLibro, @cReseña, @cTesto)";
+           using(SqlConnection db = new SqlConnection(_connectionString)){
+        db.Execute(sql, new{ cIdUsuario = RU.IdUsuario, cIdLibro = RU.IdLibro, cReseña = RU.Reseña, cTesto = RU.Testo});
+    }
+    }
+
+    public static List<ReseñaUsuario> enlistarReseñas(){
+        List<ReseñaUsuario> ListaReseñas = null;
+         using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM ReseñaUsuario";
+            ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
+        }
+        return ListaReseñas;
+    }
+
+
 }
 
 
