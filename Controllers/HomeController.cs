@@ -110,7 +110,7 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult añadirReseña(ReseñaUsuario us){
         BD.añadirReseña(us);
-        return RedirectoToAction("pantallaLibro");
+        return RedirectToAction("pantallaLibro");
     }
 
     public IActionResult pantallaEscritor()

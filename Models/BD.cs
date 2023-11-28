@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 //FEDE-GAMMER\SQLEXPRESS
 public class BD{
-      private static string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
+      private static string _connectionString = @"LocalHost;DataBase=IBDb;Trusted_Connection=True;";
 
       public static void añadirusuario(Usuario u){
         string sql = "INSERT INTO Usuario(Nombre, Contrasena, Gmail, Genero1, Genero2, Genero3, Genero4, Genero5) VALUES (@cNombre, @cContrasena, @cGmail, @cGenero1, @cGenero2, @cGenero3, @cGenero4, @cGenero5)";
