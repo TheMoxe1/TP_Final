@@ -42,11 +42,30 @@ function displayResults(results) {
   }
 
   results.forEach(result => {
-    
     const link = document.createElement('a');
-    link.href = '@Url.Action("pantallaLibro", new { L = result.idLibro})'; // Coloca aquí la URL correspondiente a cada resultado
+    link.href = "/api/buscador/redireccionar/${result.idLibro}"; // Coloca aquí la URL correspondiente a cada resultado
     link.textContent = result.nombre; // Cambia a la propiedad correcta del libro
     link.classList.add('result-link'); // Clase para los enlaces de resultado
+    resultsList.appendChild(link);
+
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+      fetch(link.href) // Realizar una solicitud GET a la URL de la API
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+          // Realizar alguna acción adicional si es necesario después de la redirección
+          console.log('Redirección exitosa:', data);
+        })
+        .catch(error => {
+          console.error('Hubo un error durante la redirección:', error);
+        });
+    });
+  
     resultsList.appendChild(link);
   });
 
