@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body class="pLibro">
   <div class="panLibro">
-  <p class="cantreseñas">239.012 reseñas totales</p>
-  <div class="swiper swiper-hero">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="SwipLibro">
-        <img class="portadaLibro" src="@ViewBag.Libro.Tapa" alt="">
-        <h3>@ViewBag.Libro.Nombre</h3>
-        <h2 class="estrellas">/*estrellas*/</h2>
-        <p class="sinopsis">@ViewBag.Libro.Sinopsis</p>
-      <div class="flexGeneros">
-        <div>@ViewBag.Libro.Genero1Nombre</div>
-        <div>@ViewBag.Libro.Genero2Nombre</div>
-        <div>@ViewBag.Libro.Genero3Nombre</div>  
-        <div>@ViewBag.Libro.Genero4Nombre</div>
-        <div>@ViewBag.Libro.Genero5Nombre</div>
-      </div>
-        <div class="barraSeparadoraAutor"></div>
-        <div class="plibroAutor">
-        <img src="@ViewBag.Libro.FotoEscritor">
-        <h4 class="Nautor"><u>@ViewBag.Libro.NombreEscritor</u></h4>
-        <div class="infoAutorInicio">
-          <p class="datAutor">@ViewBag.Libro.BioEscritor</p>
-        </div>
-        </div>
-        <div class="maslibrosautor">
-        <h5>Mas libros del autor</h5>
-        <img src="~/img/lotr.jpg" class="libroautor">
-        <img src="~/img/lotr.jpg" class="libroautor">
-        <img src="~/img/lotr.jpg" class="libroautor">
-        </div>
+    <div class="swiper swiper-hero">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="SwipLibro">
+            <img class="portadaLibro" src="@ViewBag.Libro.Tapa" alt="">
+            <h3>@ViewBag.Libro.Nombre</h3>
+            <h2 class="estrellas">/*estrellas*/</h2>
+            <p class="sinopsis">@ViewBag.Libro.Sinopsis</p>
+            <div class="flexGeneros">
+              <div>@ViewBag.Libro.Genero1Nombre</div>
+              <div>@ViewBag.Libro.Genero2Nombre</div>
+              <div>@ViewBag.Libro.Genero3Nombre</div>
+              <div>@ViewBag.Libro.Genero4Nombre</div>
+              <div>@ViewBag.Libro.Genero5Nombre</div>
+            </div>
+            <div class="barraSeparadoraAutor"></div>
+            <div class="plibroAutor">
+              <img src="@ViewBag.Libro.FotoEscritor">
+              <h4 class="Nautor"><u>@ViewBag.Libro.NombreEscritor</u></h4>
+              <div class="infoAutorInicio">
+                <p class="datAutor">@ViewBag.Libro.BioEscritor</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
+
+<div class="formularioComentario">
   <form Action='@Url.Action("añadirReseña")' method="post">
-      <input type="hidden" name= "IdUsuario" value=@Usuario.IdUsuario>
-        <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro/>
-        <div>
-            <input type="number" name="Reseña" id="Reseña" placeholder="Ingrese la puntuacion(Min 1, Max 5)" required />
-        </div>
-        <div>
-          <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
-        </div>
-        <button type="submit">Agregar Reseña</button>
-    </form>
+    <input type="hidden" name="IdUsuario" value=@Usuario.IdUsuario>
+    <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro />
+    <div>
+      <p>Puntuacion:</p>
+      <input type="number" name="Reseña" id="Reseña" min="1" max=5 required />
+    </div>
+    <div>
+      <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
+    </div>
+    <button type="submit">Agregar Reseña</button>
+  </form>
 </div>
 @foreach(ReseñaUsuario RU in ViewBag.Reseñas)
 {
@@ -82,3 +80,7 @@
 </body>
 </html>
 
+
+</body>
+
+</html>
