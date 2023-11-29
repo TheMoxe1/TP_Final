@@ -12,8 +12,8 @@
   <div class="swiper swiper-hero">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img class="portadaLibro" src=@ViewBag.carousel1.Tapa alt="">
-        <h3>@ViewBag.carousel1.Nombre</h3>
+        <a href='@Url.Action("pantallaLibro", new{L = ViewBag.carousel1.IdLibro})'><img class="portadaLibro" src=@ViewBag.carousel1.Tapa alt=""></a>
+        <a><h3>@ViewBag.carousel1.Nombre</h3></a>
         <p>@ViewBag.carousel1.Sinopsis</p>
         <div class="barraSeparadoraAutor"></div>
         <div class="datosAutor">
