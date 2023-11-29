@@ -99,7 +99,7 @@ float: left;
  float: left;
 }
 
-.registroIndex a:hover{color: lightblue; font: normal; font-weight: 800;}
+.registroIndex a:hover{color: lightblue;}
 
 .inicioView{
   background-color: black;
@@ -1039,8 +1039,12 @@ body {
 }
 
 .datosAutor{
+  width: 1590px;
+  height: 600px;
   position: absolute;
-  background: red;
-  width: 400px;
-  height: 300px;
+}
+
+.datosAutor h4{
+text-align: center;
+margin-right: 120px;
 }

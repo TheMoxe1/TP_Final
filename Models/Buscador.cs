@@ -23,5 +23,4 @@ public class buscadorController : ControllerBase
         return Ok(listaLibros);
     }
 
-    []
 }
