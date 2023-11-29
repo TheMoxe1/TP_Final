@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body class="pLibro">
   <div class="panLibro">
   <p class="cantreseñas">239.012 reseñas totales</p>
@@ -14,13 +12,8 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="SwipLibro">
-        <img class="portadaLibro" src="@ViewBag.Libro.Tapa" alt="">
+        <img class="portadaLibro" src="@ViewBag.Libro.Tapa" alt="">  
         <h3>@ViewBag.Libro.Nombre</h3>
-        <div class="rating_average2">
-          <div class="star-outer2">
-            <div class="star-inner2"></div>
-          </div>
-        </div>
         <p class="sinopsis">@ViewBag.Libro.Sinopsis</p>
       <div class="flexGeneros">
         <div>@ViewBag.Libro.Genero1Nombre</div>
@@ -44,20 +37,38 @@
     </div>
   </div>
 
-<div class="formularioComentario">
-  <form Action='@Url.Action("añadirReseña")' method="post">
-    <input type="hidden" name="IdUsuario" value=@user.IdUsuario>
-    <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro />
-    <div>
-      <p>Puntuacion:</p>
-      <input type="number" name="Reseña" id="Reseña" min="1" max=5 required />
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Agregar Reseña
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Reseña</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <form Action='@Url.Action("añadirReseña")' method="post">
+            <input type="hidden" name="IdUsuario" value=@user.IdUsuario>
+            <input type="hidden" name="Username" value=@user.Username>
+            <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro />
+            <div>
+              <p>Puntuacion:</p>
+              <input type="number" name="Reseña" id="Reseña" min="1" max=5 required />
+            </div>
+            <div>
+              <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
+            </div>
+          <button type="submit">Agregar Reseña</button>
+        </form>
+      </div>
     </div>
-    <div>
-      <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
-    </div>
-    <button type="submit">Agregar Reseña</button>
-  </form>
+  </div>
 </div>
+
 @foreach(ReseñaUsuario RU in ViewBag.Reseñas)
 {
     <div class="ReseñasFlex">
@@ -78,11 +89,10 @@
         </div>
     </div>
 }
-
-      <h3>/*estrellas*/</h3>
-      <p>Una experiencia digna de ser vivida. El señor de los anillos es la novela de fantasía por excelencia. Realmente no hay palabras que le hagan justicia a todos los sentimientos que me ha generado este libro, pero aquí hay algunas cosas que puedo destacar. Los personajes son excelentes (a pesar de que a algunos no les agrade por el hecho de ser personajes buenos y malos), puedes identificarte con ellos, además de que todos tienen sus momentos de protagonismo. Los escenarios y la representación del mundo son excelentes.</p>
-   
-  
+        <div class="rating_average2">
+          <div class="star-outer2">
+            <div class="star-inner2"></div>
+          </div>
+        </div>
 </body>
 </html>
-

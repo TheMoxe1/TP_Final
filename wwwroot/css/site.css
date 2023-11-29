@@ -798,7 +798,7 @@ body {
 .rating_average2 .star-outer2{
   position: relative;
   font-size: 2.2rem;
-  margin-left: 300px;
+  margin-left: 425px;
 }
 
 .rating_average2 .star-outer2::before{
@@ -806,7 +806,7 @@ body {
   color: gold;
 }
 .star-outer2{
-  margin-top: -65px;
+  margin-top: -520px;
   margin-bottom: 30px;
 }
 

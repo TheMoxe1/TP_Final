@@ -21,9 +21,8 @@ public class HomeController : Controller
         }
         else
         {   
-            ViewBag.Usuario = uss;
             user.cargarusuario(uss.IdUsuario);
-            return View("inicio");
+            return RedirectToAction("inicio");
         }
     }
     public IActionResult registro()
@@ -67,10 +66,13 @@ public class HomeController : Controller
     }
 
     public IActionResult inicio()
-    {
-        ViewBag.carousel1 = BD.obtenerLibroRandom();
-        ViewBag.carousel2 = BD.obtenerLibroRandom();
-        ViewBag.carousel3 = BD.obtenerLibroRandom();
+    {   
+        int num1 = 35;
+        int num2 = 45;
+        int num3 = 22;
+        ViewBag.carousel1 = BD.obtenerLibroRandom(num1);
+        ViewBag.carousel2 = BD.obtenerLibroRandom(num2);
+        ViewBag.carousel3 = BD.obtenerLibroRandom(num3);
         ViewBag.ListaGeneros = BD.enlistarLibrosXGenero();
         ViewBag.ListaReseñas = BD.enlistarLibrosXReseña();
         for(int x = 0; x < ViewBag.ListaGeneros.Count; x++){

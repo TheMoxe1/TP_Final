@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 
 public class BD{
-      private static string _connectionString = @"Server=LAPTOP-QO2P6A8S;DataBase=IBDb;Trusted_Connection=True;";
+      private static string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
 
     public static void añadirusuario(Usuario u)
     {
@@ -81,15 +81,13 @@ public class BD{
         return L;
     }
 
-    public static LibroConAutor obtenerLibroRandom()
+    public static LibroConAutor obtenerLibroRandom(int num)
     {
         LibroConAutor L = null;
-        Random random = new Random();
-        int rNumber = random.Next(5, 103);
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT L.IdLibro, L.Nombre, L.Tapa, A.Nombre AS NombreEscritor, A.Biografia AS BioEscritor, A.Foto AS FotoEscritor, L.Sinopsis FROM Libro L INNER JOIN Escritor A ON A.IdEscritor = L.IdEscritor WHERE idLibro = @crNumber";
-            L = db.QueryFirstOrDefault<LibroConAutor>(sql, new { crNumber = rNumber });
+            L = db.QueryFirstOrDefault<LibroConAutor>(sql, new { crNumber = num});
         }
         return L;
     }
@@ -148,12 +146,22 @@ public class BD{
 
     using (SqlConnection db = new SqlConnection(_connectionString))
     {
-        string sql = "SELECT R.IdReseñaUsuario, R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM ReseñaUsuario R INNER JOIN Usuario U ON R.IdUsuario = U.IdUsuario";
+        string sql = "SELECT R.IdReseña, R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM ReseñaUsuario R INNER JOIN Usuario U ON R.IdUsuario = U.IdUsuario";
 
         ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
     }
     return ListaReseñas;
 }
+
+public static string cargar(int idUsuario){
+    string Username = "";
+    using(SqlConnection db = new SqlConnection(_connectionString)){
+        string sql = "SELECT Nombre FROM Usuario WHERE IdUsuario = @cIdUsuario";
+        Username = db.QueryFirstOrDefault<string>(sql, new{cIdUsuario = idUsuario});
+    }
+    return Username;
+}
+
 }
 
 
