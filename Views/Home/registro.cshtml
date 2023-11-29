@@ -6,18 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+    function validarContraseña(contra, contra2) {
+    }
+</script>
     <div class="cardPrueba">
-        <form onsubmit="return ChequearRegistro()" Action='@Url.Action("CrearUsuario")' method="post">
+        <form value Action='@Url.Action("CrearUsuario")' method="post" onsubmit="return validarContraseña(event, document.getElementById('Contrasena').value, document.getElementById('Contrasena2').value);">
             <div class="cardText">
                 <h3>Usuario:</h3>
                 <input class="Input" type="text" name="Nombre" id="Nombre" required>
                 <h3>Email:</h3>
                 <input class="Input" type="text" name="Gmail" id="Gmail" required>
                 <h3>Contraseña:</h3>
-                <input onkeyup="Contra1()" class="Input" type="password" name="Contrasena" 
-                    placeholder="Al menos 8 caracteres" id="Contrasena" required>
+                <input class="Input" type="password" name="Contrasena" 
+                placeholder="Al menos 8 caracteres, un caracter especial y una mayuscula" id="Contrasena" id="floatingPassword" required>
                 <h3>Vuelava a ingresa Contraseña:</h3>
-                <input onkeyup="Contra2()" class="Input" type="password" name="Contrasena" id="Contrasena" required>
+                <input class="Input" type="password" name="Contrasena" id="Contrasena2" required>
                 <h3>Elija sus generos favoritos(Min 1, Max 5):</h3>
                <select type="button" data-bs-toogle="dropdown" name="Genero1" aria-expanded="false" required>
                 <option>Seleccione Genero</option>

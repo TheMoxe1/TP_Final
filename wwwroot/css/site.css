@@ -86,11 +86,20 @@ float: left;
   margin-bottom: 60px;
 }
 
+
+
 .registroIndex a{
  position: absolute;
- margin-top: 450px;
- margin-left: -140px;
+ margin-top: 400px;
+ margin-left: -390px;
+ text-decoration: none;
+ color: black;
+ font: bold;
+ font-weight:500;
+ float: left;
 }
+
+.registroIndex a:hover{color: lightblue; font: normal; font-weight: 800;}
 
 .inicioView{
   background-color: black;
