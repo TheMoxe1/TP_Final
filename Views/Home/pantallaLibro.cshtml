@@ -14,7 +14,11 @@
         <div class="SwipLibro">
         <img class="portadaLibro" src="@ViewBag.Libro.Tapa" alt="">
         <h3>@ViewBag.Libro.Nombre</h3>
-        <h2 class="estrellas">/*estrellas*/</h2>
+        <div class="rating_average2">
+          <div class="star-outer2">
+            <div class="star-inner2"></div>
+          </div>
+        </div>
         <p class="sinopsis">@ViewBag.Libro.Sinopsis</p>
       <div class="flexGeneros">
         <div>@ViewBag.Libro.Genero1Nombre</div>
@@ -32,10 +36,6 @@
         </div>
         </div>
         <div class="maslibrosautor">
-        <h5>Mas libros del autor</h5>
-        <img src="~/img/lotr.jpg" class="libroautor">
-        <img src="~/img/lotr.jpg" class="libroautor">
-        <img src="~/img/lotr.jpg" class="libroautor">
         </div>
         </div>
       </div>
@@ -43,13 +43,13 @@
   </div>
   </div>
   <form Action='@Url.Action("añadirReseña")' method="post">
-      <input type="hidden" name= "IdUsuario" value=@Usuario.IdUsuario>
+      <input type="hidden" name= "IdUsuario" value=@user.IdUsuario>
         <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro/>
         <div>
             <input type="number" name="Reseña" id="Reseña" placeholder="Ingrese la puntuacion(Min 1, Max 5)" required />
         </div>
         <div>
-          <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
+          <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required/>
         </div>
         <button type="submit">Agregar Reseña</button>
     </form>
@@ -57,7 +57,9 @@
   <div class="ReseñasFlex">
     <div class="ReseñaUsuario">
       <img src="~/img/perfil-de-usuario.webp">
-      <h3>/*estrellas*/</h3>
+      <div class="star-outer">
+        <div class="star-inner"></div>
+      </div>
       <p>Una experiencia digna de ser vivida. El señor de los anillos es la novela de fantasía por excelencia. Realmente no hay palabras que le hagan justicia a todos los sentimientos que me ha generado este libro, pero aquí hay algunas cosas que puedo destacar. Los personajes son excelentes (a pesar de que a algunos no les agrade por el hecho de ser personajes buenos y malos), puedes identificarte con ellos, además de que todos tienen sus momentos de protagonismo. Los escenarios y la representación del mundo son excelentes.</p>
     </div>
   </div>

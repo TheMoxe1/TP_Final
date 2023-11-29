@@ -7,7 +7,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        Usuario.iniciarPag();
+        user.iniciarPag();
         return View();
     }
     public IActionResult VerificarUsuario(string nombre, string contra)
@@ -22,7 +22,7 @@ public class HomeController : Controller
         else
         {   
             ViewBag.Usuario = uss;
-            Usuario.cargarusuario(ViewBag.Usuario.IdUsuario);
+            user.cargarusuario(uss.IdUsuario);
             return View("inicio");
         }
     }

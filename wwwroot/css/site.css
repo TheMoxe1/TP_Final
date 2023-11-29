@@ -795,6 +795,20 @@ body {
   content: "\2605 \2605 \2605 \2605 \2605";
   color: gold;
 }
+.rating_average2 .star-outer2{
+  position: relative;
+  font-size: 2.2rem;
+  margin-left: 300px;
+}
+
+.rating_average2 .star-outer2::before{
+  content: "\2605 \2605 \2605 \2605 \2605";
+  color: gold;
+}
+.star-outer2{
+  margin-top: -65px;
+  margin-bottom: 30px;
+}
 
 .star-outer{
   margin-top: -65px;
