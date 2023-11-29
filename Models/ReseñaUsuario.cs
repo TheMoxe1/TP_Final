@@ -4,4 +4,5 @@ public class ReseñaUsuario{
     public int IdLibro {get;set;}
     public int Reseña {get;set;}
     public string Testo {get;set;}
+    public string Username{get;set;}
 }
