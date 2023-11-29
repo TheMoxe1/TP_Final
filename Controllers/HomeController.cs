@@ -12,7 +12,7 @@ public class HomeController : Controller
     public IActionResult VerificarUsuario(string nombre, string contra)
     {
         Console.WriteLine(nombre, contra);
-        Usuario uss = BD.verificarUsuario(nombre, contra);
+        Usuario uss = BDController.verificarUsuario(nombre, contra);
         if (uss == null)
         {
             ViewBag.Error = "El usuario o la contraseña son incorrectos";
@@ -26,14 +26,14 @@ public class HomeController : Controller
     }
     public IActionResult registro()
     {
-        ViewBag.Generos = BD.enlistarGeneros();
+        ViewBag.Generos = BDController.enlistarGeneros();
         ViewBag.Error = "";
         return View();
     }
     [HttpPost]
     public IActionResult CrearUsuario(Usuario uss)
     {
-        Usuario us = BD.verificarnombre(uss.Nombre);
+        Usuario us = BDController.verificarnombre(uss.Nombre);
         if (us != null)
         {
             ViewBag.Error = "ERROR: Usuario ya existente";
@@ -41,14 +41,14 @@ public class HomeController : Controller
         }
         else
         {
-            BD.añadirusuario(uss);
+            BDController.añadirusuario(uss);
             ViewBag.msj = "El usuario se ha creado correctamente";
             return View("index");
         }
     }
     public IActionResult olvideContraseña(string nombre, string contra)
     {
-        Usuario uss = BD.verificarnombre(nombre);
+        Usuario uss = BDController.verificarnombre(nombre);
         if (uss == null)
         {
             ViewBag.Error = "Este usuario no existe";
@@ -56,7 +56,7 @@ public class HomeController : Controller
         }
         else
         {
-            BD.cambiarContraseña(nombre, contra);
+            BDController.cambiarContraseña(nombre, contra);
             ViewBag.msj = "Se cambio la contraseña correctamente";
             return View("inicio");
 
@@ -66,11 +66,11 @@ public class HomeController : Controller
 
     public IActionResult inicio()
     {
-        ViewBag.carousel1 = BD.obtenerLibroRandom();
-        ViewBag.carousel2 = BD.obtenerLibroRandom();
-        ViewBag.carousel3 = BD.obtenerLibroRandom();
-        ViewBag.ListaGeneros = BD.enlistarLibrosXGenero();
-        ViewBag.ListaReseñas = BD.enlistarLibrosXReseña();
+        ViewBag.carousel1 = BDController.obtenerLibroRandom();
+        ViewBag.carousel2 = BDController.obtenerLibroRandom();
+        ViewBag.carousel3 = BDController.obtenerLibroRandom();
+        ViewBag.ListaGeneros = BDController.enlistarLibrosXGenero();
+        ViewBag.ListaReseñas = BDController.enlistarLibrosXReseña();
         for(int x = 0; x < ViewBag.ListaGeneros.Count; x++){
             ViewBag.ListaGeneros[x].promedioPuntuacion = calcularpromedio(ViewBag.ListaGeneros[x].Reseña1, ViewBag.ListaGeneros[x].Reseña2, ViewBag.ListaGeneros[x].Reseña3, ViewBag.ListaGeneros[x].Reseña4, ViewBag.ListaGeneros[x].Reseña5, ViewBag.ListaGeneros[x].ReseñasTotales);
         }
@@ -113,15 +113,15 @@ public class HomeController : Controller
 
     public IActionResult pantallaLibro (int L)
     {
-        ViewBag.Reseñas = BD.enlistarReseñas();
-        ViewBag.Libro = BD.obtenerLibro(L);
+        ViewBag.Reseñas = BDController.enlistarReseñas();
+        ViewBag.Libro = BDController.obtenerLibro(L);
         return View();
     }
 
 
     public ReseñaUsuario VerReseña(int idL)
     {
-        return BD.obtenerReseñasUs(idL); 
+        return BDController.obtenerReseñasUs(idL); 
     }
     public IActionResult listaSeguimiento()
     {
@@ -131,14 +131,14 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult añadirSeguimiento(int idUsuario, int idLibro)
     {
-        BD.añadirSeguimiento(idUsuario, idLibro);
+        BDController.añadirSeguimiento(idUsuario, idLibro);
         return RedirectToAction("pantallaLibro");
     }
 
     [HttpPost]
     public IActionResult añadirReseña(ReseñaUsuario us){
-        BD.añadirReseña(us);
-        return RedirectoToAction("pantallaLibro");
+        BDController.añadirReseña(us);
+        return RedirectToAction("pantallaLibro");
     }
 
     public IActionResult pantallaEscritor()

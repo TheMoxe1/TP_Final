@@ -2,10 +2,11 @@ using System.Data.SqlClient;
 using Dapper;
 using System.Collections.Generic;
 
+
 //DESKTOP-Q07IUI0\SQLEXPRESS
 
 //FEDE-GAMMER\SQLEXPRESS
-public class BD{
+public class BDController{
       private static string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
 
       public static void añadirusuario(Usuario u){
@@ -118,8 +119,6 @@ public static void añadirSeguimiento(int idUsuario, int idLibro){
         }
         return ListaReseñas;
     }
-
-
 }
 
 
