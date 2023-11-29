@@ -16,12 +16,11 @@ fetch('/api/buscador/libros')
 
 // Realizar la búsqueda al escribir en el input
 searchInput.addEventListener('input', function() {
-  console.log('Input event triggered'); // Verificar si este mensaje aparece en la consola al escribir
   const searchText = this.value.toLowerCase();
-  const filteredResults = libros.filter(libro =>
-    libro.Nombre && libro.Nombre.toLowerCase().includes(searchText)
-  );  
-    
+  const filteredResults = libros.filter(LibrosBuscador =>
+    LibrosBuscador.nombre && LibrosBuscador.nombre.toLowerCase().includes(searchText)
+  ); 
+  console.log(filteredResults)
   displayResults(filteredResults);
 });
 
@@ -46,7 +45,7 @@ function displayResults(results) {
     
     const link = document.createElement('a');
     link.href = '@Url.Action("pantallaLibro", new { L = result.idLibro})'; // Coloca aquí la URL correspondiente a cada resultado
-    link.textContent = result.Nombre; // Cambia a la propiedad correcta del libro
+    link.textContent = result.nombre; // Cambia a la propiedad correcta del libro
     link.classList.add('result-link'); // Clase para los enlaces de resultado
     resultsList.appendChild(link);
   });

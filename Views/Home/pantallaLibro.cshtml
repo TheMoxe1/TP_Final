@@ -42,9 +42,19 @@
     </div>
   </div>
   </div>
+<<<<<<< HEAD
   <form Action='@Url.Action("añadirReseña")' method="post">
       <input type="hidden" name= "IdUsuario" value=@ViewBag.Usuario.IdUsuario>
         <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro/>
+=======
+  <div class="ReseñasImportante">
+    <h4><u>Reseña Relevante de : Casa del Libro</u></h4>
+    <p>Una de las primeras sagas de literatura fantástica y un clásico en la literatura contemporánea universal. Innegable la precisión con la que Tolkien imaginó este mundo de fantasía, basado en la mitología nórdica, con todo un despliegue cultural a su alrededor y una demostración de control y conocimiento idiomático incomparable. Considero que en la actualidad, con la cantidad de estímulos fantásticos que existen a nuestro alrededor, estos libros pueden resultar algo simples e incluso infantiles. Mi opinión es que las descripciones exhaustivas y la abundancia de poemas y canciones en la obra ralentizan considerablemente el ritmo de la lectura. No obstante el valor de estas obras en el momento de su publicación, y su influencia en otros mundos de fantasía posteriores, tanto literarios como cinematográficos, marcaron un antes y un después, posicionando la literatura fantástica contemporánea como uno de los géneros más leídos y disfrutados.</p>
+  </div>
+  <form action="/Home/añadirReseña" method="post">
+      <input type="hidden" name= "IdUsuario"/>
+        <input type="hidden" name="IdLibro"/>
+>>>>>>> 8c77c81c0e9d0100714f568c6bebc8d0578a8a2c
         <div>
             <input type="number" name="Reseña" id="Reseña" placeholder="Ingrese la puntuacion(Min 1, Max 5)" required />
         </div>
