@@ -831,7 +831,6 @@ body {
 
 .estrellas{
   color: green;
-  position: absolute;
   top: 250px;
   left: 550px;
 }
@@ -936,9 +935,10 @@ body {
 }
 
 .ReseñaUsuario{
-  width: 600px;
-  margin-right: 85px;
-  margin-left: 85px;
+  width: 500px;
+  margin-left: 20px;
+  margin-right: 60px;
+  margin-top: 40px;
   margin-top: 30px;
   height: 250px;
   background-color: rgb(179, 179, 179);
@@ -953,10 +953,9 @@ body {
 }
 
 .ReseñaUsuario h3{
+
   color: green;
-  position: absolute;
-  top: 1140px;
-  left: 320px;
+  
 }
 
 .ReseñaUsuario p{
@@ -1107,6 +1106,9 @@ margin-right: 120px;
 }
 
 .ReseñasFlex{
-  position: absolute;
-  margin-left: 550px;
+  margin-left: 270px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
 }

@@ -117,7 +117,7 @@ public class HomeController : Controller
 
     public IActionResult pantallaLibro(int L, Usuario us)
     {   
-        ViewBag.Reseñas = BD.enlistarReseñas();
+        ViewBag.Reseñas = BD.enlistarReseñas(L);
         ViewBag.Libro = BD.obtenerLibro(L);
         return View();
     }
@@ -142,12 +142,13 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult añadirReseña(ReseñaUsuario us){
         BD.añadirReseña(us);
-        return RedirectToAction("pantallaLibro");
+        return RedirectToAction("pantallaLibro", new {L = us.IdLibro});
     }
 
-    public IActionResult eliminarReseña(int Rid, int Uid){
-BD.eliminarReseña(Rid, Uid);
-return RedirectToAction("pantallaLibro");
+    public IActionResult eliminarReseña(int Rid, int Uid, int Lid){
+        Console.WriteLine(Rid);
+        BD.eliminarReseña(Rid, Uid);
+        return RedirectToAction("pantallaLibro", new {L = Lid});
     }
 
     public IActionResult pantallaEscritor()
