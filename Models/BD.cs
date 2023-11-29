@@ -148,7 +148,7 @@ public class BD
         List<ReseñaUsuario> ListaReseñas = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT R.Reseña, R.Testo, U.Nombre, U.IdUsuario FROM R.ReseñaUsuario INNER JOIN U.Usuario";
+            string sql = "SELECT R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM R.ReseñaUsuario INNER JOIN U.Usuario";
             ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
         }
         return ListaReseñas;
