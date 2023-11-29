@@ -113,7 +113,6 @@ public class HomeController : Controller
 
     public IActionResult pantallaLibro(int L, Usuario us)
     {
-        ViewBag.Usuario = us;
         ViewBag.Reseñas = BD.enlistarReseñas();
         ViewBag.Libro = BD.obtenerLibro(L);
         return View();
@@ -141,10 +140,6 @@ public class HomeController : Controller
         BD.añadirReseña(us);
         return RedirectToAction("pantallaLibro");
     }
-    public IActionResult eliminarReseña(int Rid, int Uid){
-    BD.eliminarReseña(Rid, Uid);
-    return RedirectToAction("pantallaLibro"); 
-}
 
     public IActionResult pantallaEscritor()
     {

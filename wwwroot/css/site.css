@@ -1036,3 +1036,10 @@ body {
 .inicioSesionIzq p{
   position: absolute;
 }
+
+.datosAutor{
+  position: absolute;
+  background: red;
+  width: 400px;
+  height: 300px;
+}
