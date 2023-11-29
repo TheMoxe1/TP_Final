@@ -16,8 +16,8 @@
         <div class="inicioSesionIzq">
             <h1>Iniciar Sesion</h1>
             <form Action='@Url.Action("VerificarUsuario")'>
-            <input placeholder="Usuario" type="text" id="nombre" name="nombre" size="10" required/>
-            <input placeholder="Contraseña" type="text" id="contra" name="contra" size="10" required/>
+            <input placeholder="Usuario" type="text" id="nombre" name="nombre"  required/>
+            <input placeholder="Contraseña" type="text" id="contra" name="contra"  required/>
             @if(ViewBag.msj != null){
                 <p>@ViewBag.msj</p>
             }

@@ -13,30 +13,22 @@
       <div class="swiper-slide">
         <div class="SwipLibro">
         <img class="portadaLibro" src="/img/lotr.jpg" alt="">
-        <h3>El señor de los Anillos</h3>
+        <h3>@ViewBag.Libro.Nombre</h3>
         <h2 class="estrellas">/*estrellas*/</h2>
-        <p class="sinopsis">En la Tierra Media, el Señor Oscuro Sauron forjó los Grandes Anillos del Poder y
-          creó uno con el poder de esclavizar a toda la Tierra Media. Frodo Bolsón es un
-          hobbit al que su tío Bilbo hace portador del poderoso Anillo Único con la misión
-          de destruirlo. Acompañado de sus amigos, Frodo emprende un viaje hacia Mordor, el
-          único lugar donde el anillo puede ser destruido. Sin embargo, Sauron ordena la persecución
-          del grupo para recuperar el anillo y acabar con la Tierra Media.</p>
+        <p class="sinopsis">@ViewBag.Libro.Sinopsis</p>
       <div class="flexGeneros">
-        <div>Genero1</div>
-        <div>Genero2</div>
-        <div>Genero3</div>  
-        <div>Genero4</div>
-        <div>Genero5</div>
+        <div>@ViewBag.Libro.Genero1</div>
+        <div>@ViewBag.Libro.Genero2</div>
+        <div>@ViewBag.Libro.Genero3</div>  
+        <div>@ViewBag.Libro.Genero4</div>
+        <div>@ViewBag.Libro.Genero5</div>
       </div>
         <div class="barraSeparadoraAutor"></div>
         <div class="plibroAutor">
         <img src="~/img/jrrTolkin.jpg">
-        <h4 class="Nautor"><u>John Ronald Reuel Tolkien</u></h4>
+        <h4 class="Nautor"><u>@ViewBag.Libro.NombreEscritor</u></h4>
         <div class="infoAutorInicio">
-          <p class="datAutor">John Ronald Reuel Tolkien, a menudo citado como J. R. R. Tolkien o JRRT, fue un escritor, poeta, filólogo,
-            lingüista y profesor universitario
-            británico, nacido en el Estado Libre de Orange. Conocido principalmente por
-            ser el autor de El hobbit y El Señor de los Anillos.</p>
+          <p class="datAutor">@ViewBag.Libro.BioEscritor</p>
         </div>
         </div>
         <div class="maslibrosautor">
@@ -50,20 +42,14 @@
     </div>
   </div>
   </div>
-  <div class="ReseñasImportante">
-    <h4><u>Reseña Relevante de : Casa del Libro</u></h4>
-    <p>Una de las primeras sagas de literatura fantástica y un clásico en la literatura contemporánea universal. Innegable la precisión con la que Tolkien imaginó este mundo de fantasía, basado en la mitología nórdica, con todo un despliegue cultural a su alrededor y una demostración de control y conocimiento idiomático incomparable. Considero que en la actualidad, con la cantidad de estímulos fantásticos que existen a nuestro alrededor, estos libros pueden resultar algo simples e incluso infantiles. Mi opinión es que las descripciones exhaustivas y la abundancia de poemas y canciones en la obra ralentizan considerablemente el ritmo de la lectura. No obstante el valor de estas obras en el momento de su publicación, y su influencia en otros mundos de fantasía posteriores, tanto literarios como cinematográficos, marcaron un antes y un después, posicionando la literatura fantástica contemporánea como uno de los géneros más leídos y disfrutados.</p>
-  </div>
-  <form action="/Home/añadirReseña" method="post">
+  <form Action='@Url.Action("añadirReseña")' method="post">
       <input type="hidden" name= "IdUsuario" value=@ViewBag.Usuario.IdUsuario>
         <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro/>
         <div>
-            <label for="Reseña">Reseña:</label>
-            <input type="number" name="Reseña" min="1" max="5" required />
+            <input type="number" name="Reseña" id="Reseña" placeholder="Ingrese la puntuacion(Min 1, Max 5)" required />
         </div>
         <div>
-            <label for="Testo">Comentario:</label>
-            <textarea name="Testo" rows="4" required></textarea>
+          <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
         </div>
         <button type="submit">Agregar Reseña</button>
     </form>
