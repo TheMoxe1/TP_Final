@@ -7,6 +7,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
+        Usuario.iniciarPag();
         return View();
     }
     public IActionResult VerificarUsuario(string nombre, string contra)
@@ -19,8 +20,9 @@ public class HomeController : Controller
             return View("index");
         }
         else
-        {
+        {   
             ViewBag.Usuario = uss;
+            Usuario.cargarusuario(ViewBag.Usuario.IdUsuario);
             return View("inicio");
         }
     }
@@ -112,7 +114,7 @@ public class HomeController : Controller
     }
 
     public IActionResult pantallaLibro(int L, Usuario us)
-    {
+    {   
         ViewBag.Reseñas = BD.enlistarReseñas();
         ViewBag.Libro = BD.obtenerLibro(L);
         return View();
@@ -139,6 +141,11 @@ public class HomeController : Controller
     public IActionResult añadirReseña(ReseñaUsuario us){
         BD.añadirReseña(us);
         return RedirectToAction("pantallaLibro");
+    }
+
+    public IActionResult eliminarReseña(int Rid, int Uid){
+BD.eliminarReseña(Rid, Uid);
+return RedirectToAction("pantallaLibro");
     }
 
     public IActionResult pantallaEscritor()

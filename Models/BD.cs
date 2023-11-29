@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 
 
-public class BD
-{
-    private static string _connectionString = @"Server=LAPTOP-QO2P6A8S;DataBase=IBDb;Trusted_Connection=True;";
+public class BD{
+      private static string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
 
     public static void añadirusuario(Usuario u)
     {
@@ -71,13 +70,13 @@ public class BD
         return ListaLibros;
     }
 
-    public static Libro obtenerLibro(int idLibro)
+    public static LibroConAutor obtenerLibro(int idLibro)
     {
-        Libro L = null;
+        LibroConAutor L = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT L.IdLibro, L.Nombre, L.Tapa, G1.Nombre AS Genero1Nombre,G2.Nombre AS Genero2Nombre, G3.Nombre AS Genero3Nombre, G4.Nombre AS Genero4Nombre, G5.Nombre AS Genero5Nombre, A.Nombre AS NombreEscritor, A.Biografia AS BioEscritor, A.Foto AS FotoEscritor, L.AnoPublicacion, L.Sinopsis, R.Reseña1, R.Reseña2, R.Reseña3, R.Reseña4, R.Reseña5, R.ReseñasTotales FROM Libro L INNER JOIN Generos G1 ON L.Genero1 = G1.IdGenero LEFT JOIN Generos G2 ON L.Genero2 = G2.IdGenero LEFT JOIN Generos G3 ON L.Genero3 = G3.IdGenero LEFT JOIN Generos G4 ON L.Genero4 = G4.IdGenero LEFT JOIN Generos G5 ON L.Genero5 = G5.IdGenero INNER JOIN Escritor A ON A.IdEscritor = L.IdEscritor INNER JOIN Reseñas R ON R.IdLibro = L.IdLibro WHERE L.IdLibro = @cIdLibro";
-            L = db.QueryFirstOrDefault<Libro>(sql, new { cIdLibro = idLibro });
+            L = db.QueryFirstOrDefault<LibroConAutor>(sql, new { cIdLibro = idLibro });
         }
         return L;
     }
@@ -146,9 +145,11 @@ public class BD
     public static List<ReseñaUsuario> enlistarReseñas()
     {
         List<ReseñaUsuario> ListaReseñas = null;
+
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM R.ReseñaUsuario INNER JOIN U.Usuario";
+
             ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
         }
         return ListaReseñas;
