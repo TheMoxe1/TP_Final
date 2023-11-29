@@ -16,8 +16,8 @@
         <div class="inicioSesionIzq">
             <h1>Iniciar Sesion</h1>
             <form Action='@Url.Action("VerificarUsuario")'>
-            <input placeholder="Usuario" type="text" id="nombre" name="nombre" size="10" />
-            <input placeholder="Contraseña" type="text" id="contra" name="contra" size="10" />
+            <input placeholder="Usuario" type="text" id="nombre" name="nombre" size="10" required/>
+            <input placeholder="Contraseña" type="text" id="contra" name="contra" size="10" required/>
             @if(ViewBag.msj != null){
                 <p>@ViewBag.msj</p>
             }
@@ -26,11 +26,12 @@
         </div>
 
         <div class="registroIndex">
-            <a href='@Url.Action("registro")'>Registrarse</a>
+            
+          <a href='@Url.Action("registro")'>Registrate</a>
         </div>
 
         <div class="inicioSesionDer">
-            <h1>Iniciar Con</h1>
+            <h1>Iniciar Con...</h1>
             <button class="botonGoogle">Google</button>
             <button class="botonFaceBook">Facebook</button>
             <button class="botonInstagram">Instagram</button>

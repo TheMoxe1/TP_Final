@@ -3,11 +3,9 @@ using Dapper;
 using System.Collections.Generic;
 
 
-//DESKTOP-Q07IUI0\SQLEXPRESS
 
-//FEDE-GAMMER\SQLEXPRESS
-public class BDController{
-      private static string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
+public class BD{
+      private static string _connectionString = @"Server=/DESKTOP-Q07IUI0\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
 
       public static void añadirusuario(Usuario u){
         string sql = "INSERT INTO Usuario(Nombre, Contrasena, Gmail, Genero1, Genero2, Genero3, Genero4, Genero5) VALUES (@cNombre, @cContrasena, @cGmail, @cGenero1, @cGenero2, @cGenero3, @cGenero4, @cGenero5)";
@@ -50,7 +48,7 @@ public static Usuario verificarUsuario(string Nombre, string Contra){
         return ListaLibros;
     }
 
-     public static List<Libro> enlistarLibrosXReseña(){//Tendria sentido que reciba generos o autor para filtrar pq mucho sentido no tiene agarrar todo
+     public static List<Libro> enlistarLibrosXReseña(){
         List<Libro> ListaLibros = null;
 
         using(SqlConnection db = new SqlConnection(_connectionString)){
@@ -111,10 +109,18 @@ public static void añadirSeguimiento(int idUsuario, int idLibro){
     }
     }
 
+    public static void eliminarReseña(int Rid, int Uid){
+    string sql = "DELETE FROM ReseñaUsuario WHERE IdReseñaUsuario = @cRid AND IdUsuario = @cUid";
+    using (SqlConnection db = new SqlConnection(_connectionString))
+    {
+        db.Execute(sql, new { cRid = Rid, cUid = Uid });
+    }
+}
+
     public static List<ReseñaUsuario> enlistarReseñas(){
         List<ReseñaUsuario> ListaReseñas = null;
          using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT * FROM ReseñaUsuario";
+            string sql = "SELECT R.Reseña, R.Testo, U.Nombre, U.IdUsuario FROM R.ReseñaUsuario INNER JOIN U.Usuario";
             ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
         }
         return ListaReseñas;
