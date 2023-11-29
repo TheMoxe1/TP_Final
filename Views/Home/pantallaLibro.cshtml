@@ -6,6 +6,7 @@
   <title>Document</title>
 </head>
 <body class="pLibro">
+
   <div class="panLibro">
   <p class="cantreseñas">239.012 reseñas totales</p>
   <div class="swiper swiper-hero">
@@ -37,10 +38,13 @@
     </div>
   </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Agregar Reseña
-</button>
+@if(user.IdUsuario != -1){
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+     Agregar Reseña
+  </button>
+}
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -60,7 +64,7 @@
               <input type="number" name="Reseña" id="Reseña" min="1" max=5 required />
             </div>
             <div>
-              <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
+              <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required>
             </div>
           <button type="submit">Agregar Reseña</button>
         </form>
@@ -68,10 +72,10 @@
     </div>
   </div>
 </div>
-
+<div class="ReseñasFlex">
 @foreach(ReseñaUsuario RU in ViewBag.Reseñas)
 {
-    <div class="ReseñasFlex">
+    
         <div class="ReseñaUsuario">
             <img src="~/img/perfil-de-usuario.webp">
             <h1>@RU.Username</h1>
@@ -80,15 +84,17 @@
 
             @if (user.IdUsuario == RU.IdUsuario)
             {
-                <form action='@Url.Action("eliminarReseña")' method="post">
-                    <input type="hidden" name="Rid" value='@RU.IdReseñaUsuario'>
+                <form action='@Url.Action("eliminarReseña")' >
+                    <input type="hidden" name="Rid" value='@RU.IdReseña'>
                     <input type="hidden" name="Uid" value='@RU.IdUsuario'>
-                    <button type="submit"></button>
+                    <input type="hidden" name="Lid" value='@ViewBag.Libro.IdLibro'>
+                    <button type="submit" class="btn btn-danger">Eliminar Reseña</button>
                 </form>
             }
         </div>
-    </div>
+    
 }
+</div>
         <div class="rating_average2">
           <div class="star-outer2">
             <div class="star-inner2"></div>

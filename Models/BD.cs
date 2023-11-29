@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 
 public class BD{
-      private static string _connectionString = @"Server=A-PHZ2-CIDI-020;DataBase=IBDb;Trusted_Connection=True;";
+      private static string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
 
     public static void añadirusuario(Usuario u)
     {
@@ -133,22 +133,22 @@ public class BD{
 
     public static void eliminarReseña(int Rid, int Uid)
     {
-        string sql = "DELETE FROM ReseñaUsuario WHERE IdReseñaUsuario = @cRid AND IdUsuario = @cUid";
+        string sql = "DELETE FROM ReseñaUsuario WHERE IdReseña = @cRid AND IdUsuario = @cUid";
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             db.Execute(sql, new { cRid = Rid, cUid = Uid });
         }
     }
 
-  public static List<ReseñaUsuario> enlistarReseñas()
+  public static List<ReseñaUsuario> enlistarReseñas(int Lid)
 {
     List<ReseñaUsuario> ListaReseñas = null;
 
     using (SqlConnection db = new SqlConnection(_connectionString))
     {
-        string sql = "SELECT R.IdReseña, R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM ReseñaUsuario R INNER JOIN Usuario U ON R.IdUsuario = U.IdUsuario";
+        string sql = "SELECT R.IdReseña, R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM ReseñaUsuario R INNER JOIN Usuario U ON R.IdUsuario = U.IdUsuario WHERE IdLibro = @cLid";
 
-        ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
+        ListaReseñas = db.Query<ReseñaUsuario>(sql, new {cLid = Lid}).ToList();
     }
     return ListaReseñas;
 }
