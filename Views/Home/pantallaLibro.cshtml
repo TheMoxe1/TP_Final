@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body class="pLibro">
   <div class="panLibro">
-  <p class="cantreseñas">239.012 reseñas totales</p>
-  <div class="swiper swiper-hero">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="SwipLibro">
-        <img class="portadaLibro" src="@ViewBag.Libro.Tapa" alt="">
-        <h3>@ViewBag.Libro.Nombre</h3>
-        <h2 class="estrellas">/*estrellas*/</h2>
-        <p class="sinopsis">@ViewBag.Libro.Sinopsis</p>
-      <div class="flexGeneros">
-        <div>@ViewBag.Libro.Genero1Nombre</div>
-        <div>@ViewBag.Libro.Genero2Nombre</div>
-        <div>@ViewBag.Libro.Genero3Nombre</div>  
-        <div>@ViewBag.Libro.Genero4Nombre</div>
-        <div>@ViewBag.Libro.Genero5Nombre</div>
-      </div>
-        <div class="barraSeparadoraAutor"></div>
-        <div class="plibroAutor">
-        <img src="@ViewBag.Libro.FotoEscritor">
-        <h4 class="Nautor"><u>@ViewBag.Libro.NombreEscritor</u></h4>
-        <div class="infoAutorInicio">
-          <p class="datAutor">@ViewBag.Libro.BioEscritor</p>
-        </div>
-        </div>
-        <div class="maslibrosautor">
-        <h5>Mas libros del autor</h5>
-        <img src="~/img/lotr.jpg" class="libroautor">
-        <img src="~/img/lotr.jpg" class="libroautor">
-        <img src="~/img/lotr.jpg" class="libroautor">
-        </div>
+    <div class="swiper swiper-hero">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="SwipLibro">
+            <img class="portadaLibro" src="@ViewBag.Libro.Tapa" alt="">
+            <h3>@ViewBag.Libro.Nombre</h3>
+            <h2 class="estrellas">/*estrellas*/</h2>
+            <p class="sinopsis">@ViewBag.Libro.Sinopsis</p>
+            <div class="flexGeneros">
+              <div>@ViewBag.Libro.Genero1Nombre</div>
+              <div>@ViewBag.Libro.Genero2Nombre</div>
+              <div>@ViewBag.Libro.Genero3Nombre</div>
+              <div>@ViewBag.Libro.Genero4Nombre</div>
+              <div>@ViewBag.Libro.Genero5Nombre</div>
+            </div>
+            <div class="barraSeparadoraAutor"></div>
+            <div class="plibroAutor">
+              <img src="@ViewBag.Libro.FotoEscritor">
+              <h4 class="Nautor"><u>@ViewBag.Libro.NombreEscritor</u></h4>
+              <div class="infoAutorInicio">
+                <p class="datAutor">@ViewBag.Libro.BioEscritor</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
+
+<div class="formularioComentario">
   <form Action='@Url.Action("añadirReseña")' method="post">
-      <input type="hidden" name= "IdUsuario" value=@Usuario.IdUsuario>
-        <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro/>
-        <div>
-            <input type="number" name="Reseña" id="Reseña" placeholder="Ingrese la puntuacion(Min 1, Max 5)" required />
-        </div>
-        <div>
-          <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
-        </div>
-        <button type="submit">Agregar Reseña</button>
-    </form>
+    <input type="hidden" name="IdUsuario" value=@Usuario.IdUsuario>
+    <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro />
+    <div>
+      <p>Puntuacion:</p>
+      <input type="number" name="Reseña" id="Reseña" min="1" max=5 required />
+    </div>
+    <div>
+      <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
+    </div>
+    <button type="submit">Agregar Reseña</button>
+  </form>
 </div>
+
+
+  </div>
   <div class="ReseñasFlex">
     <div class="ReseñaUsuario">
       <img src="~/img/perfil-de-usuario.webp">
-      <h3>/*estrellas*/</h3>
-      <p>Una experiencia digna de ser vivida. El señor de los anillos es la novela de fantasía por excelencia. Realmente no hay palabras que le hagan justicia a todos los sentimientos que me ha generado este libro, pero aquí hay algunas cosas que puedo destacar. Los personajes son excelentes (a pesar de que a algunos no les agrade por el hecho de ser personajes buenos y malos), puedes identificarte con ellos, además de que todos tienen sus momentos de protagonismo. Los escenarios y la representación del mundo son excelentes.</p>
+      <p>Una experiencia digna de ser vivida. El señor de los anillos es la novela de fantasía por excelencia. Realmente
+        no hay palabras que le hagan justicia a todos los sentimientos que me ha generado este libro, pero aquí hay
+        algunas cosas que puedo destacar. Los personajes son excelentes (a pesar de que a algunos no les agrade por el
+        hecho de ser personajes buenos y malos), puedes identificarte con ellos, además de que todos tienen sus momentos
+        de protagonismo. Los escenarios y la representación del mundo son excelentes.</p>
     </div>
   </div>
-  
-</body>
-</html>
 
+</body>
+
+</html>

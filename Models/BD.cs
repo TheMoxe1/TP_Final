@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 
 public class BD{
-      private static string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
+      private static string _connectionString = @"Server=LAPTOP-QO2P6A8S;DataBase=IBDb;Trusted_Connection=True;";
 
     public static void añadirusuario(Usuario u)
     {
