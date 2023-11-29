@@ -143,6 +143,11 @@ public class HomeController : Controller
         return RedirectToAction("pantallaLibro");
     }
 
+    public IActionResult eliminarReseña(int Rid, int Uid){
+BD.eliminarReseña(Rid, Uid);
+return RedirectToAction("pantallaLibro");
+    }
+
     public IActionResult pantallaEscritor()
     {
 
