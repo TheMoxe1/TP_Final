@@ -67,6 +67,7 @@ public class HomeController : Controller
 
     public IActionResult inicio()
     {   
+        ViewBag.NumeroAleatorio = GenerarNumeroAleatorio();
         int num1 = 35;
         int num2 = 45;
         int num3 = 22;
@@ -161,7 +162,11 @@ return RedirectToAction("pantallaLibro");
         // ViewBag.ListaLibros = BD.ObtenerLibros();
         return View();
     }
-
+    public static int GenerarNumeroAleatorio()
+    {
+        Random random = new Random();
+        return random.Next(1, 6);
+    }
 
 
 

@@ -796,7 +796,7 @@ body {
   color: gold;
 }
 .rating_average2 .star-outer2{
-  position: relative;
+  position: absolute;
   font-size: 2.2rem;
   margin-left: 425px;
 }
@@ -1109,4 +1109,9 @@ margin-right: 120px;
 .ReseñasFlex{
   position: absolute;
   margin-left: 550px;
+}
+
+
+.topnav img{
+  margin-left: 520px;
 }
