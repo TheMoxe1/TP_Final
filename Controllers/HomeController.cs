@@ -15,7 +15,7 @@ public class HomeController : Controller
         Usuario uss = BD.verificarUsuario(nombre, contra);
         if (uss == null)
         {
-            ViewBag.Error = "El usuario o la contraseña son incorrectos";
+            ViewBag.msj = "El usuario o la contraseña son incorrectos";
             return View("index");
         }
         else
@@ -36,7 +36,7 @@ public class HomeController : Controller
         Usuario us = BD.verificarnombre(uss.Nombre);
         if (us != null)
         {
-            ViewBag.Error = "ERROR: Usuario ya existente";
+            ViewBag.msj = "ERROR: Usuario ya existente";
             return RedirectToAction("registro");
         }
         else

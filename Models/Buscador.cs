@@ -23,12 +23,4 @@ public class buscadorController : ControllerBase
         }
         return Ok(listaLibros);
     }
-
-
-    
-    [HttpGet("redireccionar")]
-    public IActionResult redireccionar(int idLibro)
-    {
-        return RedirectToAction("pantallaLibro", "Home", new { L = idLibro });
-    }
 }
