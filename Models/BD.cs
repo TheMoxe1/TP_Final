@@ -5,7 +5,11 @@ using System.Collections.Generic;
 
 
 public class BD{
-      private static string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
+<<<<<<< HEAD
+      private static string _connectionString = @"Server=LAPTOP-QO2P6A8S;DataBase=IBDb;Trusted_Connection=True;";
+=======
+      private static string _connectionString = @"Server=DESKTOP-Q07IUI0\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
+>>>>>>> abda93935ffa1d0d33047800939abc20119d5101
 
     public static void añadirusuario(Usuario u)
     {
@@ -142,16 +146,20 @@ public class BD{
         }
     }
 
-    public static List<ReseñaUsuario> enlistarReseñas()
+  public static List<ReseñaUsuario> enlistarReseñas()
+{
+    List<ReseñaUsuario> ListaReseñas = null;
+
+    using (SqlConnection db = new SqlConnection(_connectionString))
     {
-        List<ReseñaUsuario> ListaReseñas = null;
-         using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT R.Reseña, R.Testo, U.Nombre, U.IdUsuario FROM ReseñaUsuario R INNER JOIN Usuario U on U.IdUsuario = R.IdUsuario";
-            ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
-        }
-        return ListaReseñas;
+        string sql = "SELECT R.IdReseñaUsuario, R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM ReseñaUsuario R INNER JOIN Usuario U ON R.IdUsuario = U.IdUsuario";
+
+        ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
     }
+    return ListaReseñas;
 }
+}
+
 
 
 

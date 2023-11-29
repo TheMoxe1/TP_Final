@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body class="pLibro">
   <div class="panLibro">
   <p class="cantreseñas">239.012 reseñas totales</p>
@@ -41,29 +43,50 @@
       </div>
     </div>
   </div>
-  </div>
+
+<div class="formularioComentario">
   <form Action='@Url.Action("añadirReseña")' method="post">
-      <input type="hidden" name= "IdUsuario" value=@user.IdUsuario>
-        <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro/>
-        <div>
-            <input type="number" name="Reseña" id="Reseña" placeholder="Ingrese la puntuacion(Min 1, Max 5)" required />
-        </div>
-        <div>
-          <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required/>
-        </div>
-        <button type="submit">Agregar Reseña</button>
-    </form>
-</div>
-  <div class="ReseñasFlex">
-    <div class="ReseñaUsuario">
-      <img src="~/img/perfil-de-usuario.webp">
-      <div class="star-outer">
-        <div class="star-inner"></div>
-      </div>
-      <p>Una experiencia digna de ser vivida. El señor de los anillos es la novela de fantasía por excelencia. Realmente no hay palabras que le hagan justicia a todos los sentimientos que me ha generado este libro, pero aquí hay algunas cosas que puedo destacar. Los personajes son excelentes (a pesar de que a algunos no les agrade por el hecho de ser personajes buenos y malos), puedes identificarte con ellos, además de que todos tienen sus momentos de protagonismo. Los escenarios y la representación del mundo son excelentes.</p>
+    <input type="hidden" name="IdUsuario" value=@user.IdUsuario>
+    <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro />
+    <div>
+      <p>Puntuacion:</p>
+      <input type="number" name="Reseña" id="Reseña" min="1" max=5 required />
     </div>
-  </div>
+    <div>
+      <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required></input>
+    </div>
+    <button type="submit">Agregar Reseña</button>
+  </form>
+</div>
+@foreach(ReseñaUsuario RU in ViewBag.Reseñas)
+{
+    <div class="ReseñasFlex">
+        <div class="ReseñaUsuario">
+            <img src="~/img/perfil-de-usuario.webp">
+            <h1>@RU.Username</h1>
+            <h3>@RU.Reseña</h3>
+            <p>@RU.Testo</p>
+
+            @if (user.IdUsuario == RU.IdUsuario)
+            {
+                <form action='@Url.Action("eliminarReseña")' method="post">
+                    <input type="hidden" name="Rid" value='@RU.IdReseñaUsuario'>
+                    <input type="hidden" name="Uid" value='@RU.IdUsuario'>
+                    <button type="submit"></button>
+                </form>
+            }
+        </div>
+    </div>
+}
+
+      <h3>/*estrellas*/</h3>
+      <p>Una experiencia digna de ser vivida. El señor de los anillos es la novela de fantasía por excelencia. Realmente no hay palabras que le hagan justicia a todos los sentimientos que me ha generado este libro, pero aquí hay algunas cosas que puedo destacar. Los personajes son excelentes (a pesar de que a algunos no les agrade por el hecho de ser personajes buenos y malos), puedes identificarte con ellos, además de que todos tienen sus momentos de protagonismo. Los escenarios y la representación del mundo son excelentes.</p>
+   
   
 </body>
 </html>
 
+
+</body>
+
+</html>

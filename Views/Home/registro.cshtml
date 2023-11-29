@@ -11,7 +11,7 @@
     }
 </script>
     <div class="cardPrueba">
-        <form value Action='@Url.Action("CrearUsuario")' method="post" onsubmit="return validarContraseña(event, document.getElementById('Contrasena').value, document.getElementById('Contrasena2').value);">
+        <form Action='@Url.Action("CrearUsuario")' method="post" onsubmit="return validarContraseña(event, document.getElementById('Contrasena').value, document.getElementById('Contrasena2').value);">
             <div class="cardText">
                 <h3>Usuario:</h3>
                 <input class="Input" type="text" name="Nombre" id="Nombre" required>

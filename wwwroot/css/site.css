@@ -864,10 +864,12 @@ body {
   position: absolute;
   top: 710px;
   left: 530px;
+  margin-top: -60px;
 }
 
 .flexGeneros div{
-  background-color: rgb(160, 157, 157);
+  background-color: rgb(0, 0, 0);
+  color: white;
   border-radius: 25px;
   margin-left: 10px;
   margin-right: 10px;
@@ -1061,4 +1063,50 @@ body {
 .datosAutor h4{
 text-align: center;
 margin-right: 120px;
+}
+
+.formularioComentario{
+  background: white;
+  position: absolute;
+  width: 450px;
+  height: 350px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 118px;
+}
+
+.formularioComentario p{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.formularioComentario input[type=number]{
+  width: 50px;
+  position: absolute;
+  margin-top: -46px;
+  margin-left: 140px;
+}
+
+.formularioComentario input[type=text]{
+  width: 450px;
+  height: 200px;
+  text-align: justify;
+}
+
+.formularioComentario button{
+  position: absolute;
+  background: green;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-left: 140px;
+}
+
+.ReseñasFlex{
+  position: absolute;
+  margin-left: 550px;
 }
