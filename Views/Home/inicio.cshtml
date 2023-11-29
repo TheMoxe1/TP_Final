@@ -26,7 +26,7 @@
       </div>
 
       <div class="swiper-slide">
-        <img class="portadaLibro" src=@ViewBag.carousel2.Tapa alt="">
+        <a href='@Url.Action("pantallaLibro", new{L = ViewBag.carousel2.IdLibro})'><img class="portadaLibro" src=@ViewBag.carousel2.Tapa alt=""></a>
         <h3>@ViewBag.carousel2.Nombre</h3>
         <p>@ViewBag.carousel2.Sinopsis</p>
         <div class="barraSeparadoraAutor"></div>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="swiper-slide">
-          <img class="portadaLibro" src=@ViewBag.carousel3.Tapa alt="">
+          <a href='@Url.Action("pantallaLibro", new{L = ViewBag.carousel3.IdLibro})'><img class="portadaLibro" src=@ViewBag.carousel3.Tapa alt=""></a>
           <h3>@ViewBag.carousel3.Nombre</h3>
           <p>@ViewBag.carousel3.Sinopsis</p>
           <div class="barraSeparadoraAutor"></div>
