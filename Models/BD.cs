@@ -142,19 +142,20 @@ public class BD{
         }
     }
 
-    public static List<ReseñaUsuario> enlistarReseñas()
+  public static List<ReseñaUsuario> enlistarReseñas()
+{
+    List<ReseñaUsuario> ListaReseñas = null;
+
+    using (SqlConnection db = new SqlConnection(_connectionString))
     {
-        List<ReseñaUsuario> ListaReseñas = null;
+        string sql = "SELECT R.IdReseñaUsuario, R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM ReseñaUsuario R INNER JOIN Usuario U ON R.IdUsuario = U.IdUsuario";
 
-        using (SqlConnection db = new SqlConnection(_connectionString))
-        {
-            string sql = "SELECT R.Reseña, R.Testo, U.Nombre AS Username, U.IdUsuario AS IdUsuario FROM R.ReseñaUsuario INNER JOIN U.Usuario";
-
-            ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
-        }
-        return ListaReseñas;
+        ListaReseñas = db.Query<ReseñaUsuario>(sql).ToList();
     }
+    return ListaReseñas;
 }
+}
+
 
 
 
