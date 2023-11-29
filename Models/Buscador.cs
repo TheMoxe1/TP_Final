@@ -9,7 +9,7 @@ using Dapper;
 [Route("api/[controller]")]
 public class buscadorController : ControllerBase
 {
-    private readonly string _connectionString = @"Server=FEDE-GAMMER\SQLEXPRESS;DataBase=IBDb;Trusted_Connection=True;";
+    private readonly string _connectionString = @"Server=.;DataBase=IBDb;Trusted_Connection=True;";
 
     [HttpGet("libros")]
     public IActionResult ObtenerLibros()
