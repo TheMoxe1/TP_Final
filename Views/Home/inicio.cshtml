@@ -89,8 +89,9 @@
     });
   </script>
 
-  <section class="product">
-    <h2 class="product-category">@ViewBag.ListaGeneros[1].Genero1Nombre</h2>
+  @for(int e = 0; e<=4;e++){
+    <section class="product">
+    <h2 class="product-category">@ViewBag.ListaGeneros[e].Genero1Nombre</h2>
     <button class="pre-btn">
       <div class="swiper-button-prev"></div>
     </button>
@@ -101,7 +102,7 @@
       @for(int x = 0; x < ViewBag.ListaGeneros.Count; x++){
         <div class="product-card">
           <div class="product-image">
-            <img src=@ViewBag.ListaGeneros[x].Tapa class="product-thumb" alt="">
+            <img src=@ViewBag.ListaGeneros[e]..Tapa class="product-thumb" alt="">
             <button class="card-btn">add to wishlist</button>
         </div>
         <div class="product-info">
@@ -117,12 +118,155 @@
                     </div>
                 </div>
             </div>
-            <h2 class="product-brand">@ViewBag.ListaGeneros[x].Nombre</h2>
+            <h2 class="product-brand">@ViewBag.ListaGeneros[e].Nombre</h2>
         </div>
     </div>
     }
  
   </section>
+  }
+  
+
+  <section class="product">
+    <h2 class="product-category">@ViewBag.ListaGeneros1[1].Genero1Nombre</h2>
+    <button class="pre-btn">
+      <div class="swiper-button-prev"></div>
+    </button>
+    <button class="nxt-btn">
+      <div class="swiper-button-next"></div>
+    </button>
+    <div class="product-container">
+      @for(int x = 0; x < ViewBag.ListaGeneros1.Count; x++){
+        <div class="product-card">
+          <div class="product-image">
+            <img src=@ViewBag.ListaGeneros1[x].Tapa class="product-thumb" alt="">
+            <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+            <div class="app">
+                <div class="rating">
+                    <div class="rating_average">
+                        <h1>@ViewBag.NumeroAleatorio</h1>
+                        <div class="star-outer">
+                            <div class="star-inner"></div>
+                        </div>
+                    </div>
+                    <div class="rating_progress">
+                    </div>
+                </div>
+            </div>
+            <h2 class="product-brand">@ViewBag.ListaGeneros1[x].Nombre</h2>
+        </div>
+    </div>
+    }
+ 
+  </section>
+
+  <section class="product">
+    <h2 class="product-category">@ViewBag.ListaGeneros2[1].Genero1Nombre</h2>
+    <button class="pre-btn">
+      <div class="swiper-button-prev"></div>
+    </button>
+    <button class="nxt-btn">
+      <div class="swiper-button-next"></div>
+    </button>
+    <div class="product-container">
+      @for(int x = 0; x < ViewBag.ListaGeneros2.Count; x++){
+        <div class="product-card">
+          <div class="product-image">
+            <img src=@ViewBag.ListaGeneros2[x].Tapa class="product-thumb" alt="">
+            <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+            <div class="app">
+                <div class="rating">
+                    <div class="rating_average">
+                        <h1>@ViewBag.NumeroAleatorio</h1>
+                        <div class="star-outer">
+                            <div class="star-inner"></div>
+                        </div>
+                    </div>
+                    <div class="rating_progress">
+                    </div>
+                </div>
+            </div>
+            <h2 class="product-brand">@ViewBag.ListaGeneros2[x].Nombre</h2>
+        </div>
+    </div>
+    }
+ 
+  </section>
+
+  <section class="product">
+    <h2 class="product-category">@ViewBag.ListaGeneros3[1].Genero1Nombre</h2>
+    <button class="pre-btn">
+      <div class="swiper-button-prev"></div>
+    </button>
+    <button class="nxt-btn">
+      <div class="swiper-button-next"></div>
+    </button>
+    <div class="product-container">
+      @for(int x = 0; x < ViewBag.ListaGeneros3.Count; x++){
+        <div class="product-card">
+          <div class="product-image">
+            <img src=@ViewBag.ListaGeneros3[x].Tapa class="product-thumb" alt="">
+            <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+            <div class="app">
+                <div class="rating">
+                    <div class="rating_average">
+                        <h1>@ViewBag.NumeroAleatorio</h1>
+                        <div class="star-outer">
+                            <div class="star-inner"></div>
+                        </div>
+                    </div>
+                    <div class="rating_progress">
+                    </div>
+                </div>
+            </div>
+            <h2 class="product-brand">@ViewBag.ListaGeneros3[x].Nombre</h2>
+        </div>
+    </div>
+    }
+ 
+  </section>
+
+  <section class="product">
+    <h2 class="product-category">@ViewBag.ListaGeneros4[1].Genero1Nombre</h2>
+    <button class="pre-btn">
+      <div class="swiper-button-prev"></div>
+    </button>
+    <button class="nxt-btn">
+      <div class="swiper-button-next"></div>
+    </button>
+    <div class="product-container">
+      @for(int x = 0; x < ViewBag.ListaGeneros4.Count; x++){
+        <div class="product-card">
+          <div class="product-image">
+            <img src=@ViewBag.ListaGeneros4[x].Tapa class="product-thumb" alt="">
+            <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+            <div class="app">
+                <div class="rating">
+                    <div class="rating_average">
+                        <h1>@ViewBag.NumeroAleatorio</h1>
+                        <div class="star-outer">
+                            <div class="star-inner"></div>
+                        </div>
+                    </div>
+                    <div class="rating_progress">
+                    </div>
+                </div>
+            </div>
+            <h2 class="product-brand">@ViewBag.ListaGeneros4[x].Nombre</h2>
+        </div>
+    </div>
+    }
+ 
+  </section>
+
 
   <section class="product">
     <h2 class="product-category">Con mas Reseñas</h2>

@@ -74,7 +74,15 @@ public class HomeController : Controller
         ViewBag.carousel1 = BD.obtenerLibroRandom(num1);
         ViewBag.carousel2 = BD.obtenerLibroRandom(num2);
         ViewBag.carousel3 = BD.obtenerLibroRandom(num3);
+        ViewBag.ListaGeneros = new List<List<Libro>>() ;
+        for(int e = 1; e <= 5; e++){
+            ViewBag.ListaGeneros.Add(BD.enlistarLibrosXGenero());
+        }
         ViewBag.ListaGeneros = BD.enlistarLibrosXGenero();
+        ViewBag.ListaGeneros1 = BD.enlistarLibrosXGenero();
+        ViewBag.ListaGeneros2 = BD.enlistarLibrosXGenero();
+        ViewBag.ListaGeneros3 = BD.enlistarLibrosXGenero();
+        ViewBag.ListaGeneros4 = BD.enlistarLibrosXGenero();
         ViewBag.ListaReseñas = BD.enlistarLibrosXReseña();
         for(int x = 0; x < ViewBag.ListaGeneros.Count; x++){
             ViewBag.ListaGeneros[x].promedioPuntuacion = calcularpromedio(ViewBag.ListaGeneros[x].Reseña1, ViewBag.ListaGeneros[x].Reseña2, ViewBag.ListaGeneros[x].Reseña3, ViewBag.ListaGeneros[x].Reseña4, ViewBag.ListaGeneros[x].Reseña5, ViewBag.ListaGeneros[x].ReseñasTotales);
