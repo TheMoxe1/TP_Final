@@ -25,6 +25,14 @@ public class HomeController : Controller
             return RedirectToAction("inicio");
         }
     }
+    public IActionResult CerrarSesion()
+    {
+
+        user.cargarusuario(-1)
+        Console.WriteLine(nombre, contra);
+        return RedirectToAction("index");
+    }
+
     public IActionResult registro()
     {
         ViewBag.Generos = BD.enlistarGeneros();
