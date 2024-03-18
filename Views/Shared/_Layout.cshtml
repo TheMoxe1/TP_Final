@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+@if(user.IdUsuario != -1){
+   <div class="topnav">
+    <a href='@Url.Action("inicio")'><img src="~/img/Logo.png" alt="logo" height="40px" width="60px"></a>
+    <span id="menuBtn">&#9776; Menu</span>
+    <input type="text" id="searchInput" placeholder="Buscar...">
+    <div id="results" class="results-container"></div>
+    <a class="divnav" href='@Url.Action("inicio")'>Home</a>
+    <a class="divnav" href='@Url.Action("Index")'>Cerrar Sesion</a>
+    @* <!-- <a class="divnav" href="pantallaGenero">Generos</a>
+    <a class="divnav" href='@Url.Action("pantallaLibro")'>Plibro</a>
+    <a class="divnav" href='@Url.Action("listaSeguimiento")'>listaSeguimiento</a> --> *@
+  </div>
+  }
+  @else{
   <div class="topnav">
     <a href='@Url.Action("inicio")'><img src="~/img/Logo.png" alt="logo" height="40px" width="60px"></a>
     <span id="menuBtn">&#9776; Menu</span>
@@ -13,7 +27,7 @@
     <a class="divnav" href='@Url.Action("pantallaLibro")'>Plibro</a>
     <a class="divnav" href='@Url.Action("listaSeguimiento")'>listaSeguimiento</a> -->
   </div>
-
+}
   <script src="~/js/script.js"></script>
   
   <meta charset="utf-8" />
