@@ -42,8 +42,8 @@ function displayResults(results) {
   }
 
   results.forEach(result => {
-    const link = document.createElement('button');
-    link.onclick="" // Coloca aquí la URL correspondiente a cada resultado
+    const link = document.createElement('a');
+    link.href = "/api/buscador/redireccionar/${result.idLibro}"; // Coloca aquí la URL correspondiente a cada resultado
     link.textContent = result.nombre; // Cambia a la propiedad correcta del libro
     link.classList.add('result-link'); // Clase para los enlaces de resultado
     resultsList.appendChild(link);
@@ -71,11 +71,3 @@ function displayResults(results) {
 
   resultsList.style.display = results.length > 0 ? 'block' : 'none';
 }
-
-//function mandarLibo(IdL){
-//    $.ajax(
-//      type: "POST",
-//      dataType: 'JSON',
-
-//    )
-//}
