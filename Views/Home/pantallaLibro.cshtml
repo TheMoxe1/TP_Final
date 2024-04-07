@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="pLibro">
+
+  <div class="panLibro">
+  <p class="cantreseñas">239.012 reseñas totales</p>
+  <div class="swiper swiper-hero">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="SwipLibro">
+        <img class="portadaLibro" src="@ViewBag.Libro.Tapa" alt="">  
+        <h3>@ViewBag.Libro.Nombre</h3>
+        <p class="sinopsis">@ViewBag.Libro.Sinopsis</p>
+      <div class="flexGeneros">
+        <div>@ViewBag.Libro.Genero1Nombre</div>
+        <div>@ViewBag.Libro.Genero2Nombre</div>
+        <div>@ViewBag.Libro.Genero3Nombre</div>  
+        <div>@ViewBag.Libro.Genero4Nombre</div>
+        <div>@ViewBag.Libro.Genero5Nombre</div>
+      </div>
+        <div class="barraSeparadoraAutor"></div>
+        <div class="plibroAutor">
+        <img src="@ViewBag.Libro.FotoEscritor">
+        <h4 class="Nautor"><u>@ViewBag.Libro.NombreEscritor</u></h4>
+        <div class="infoAutorInicio">
+          <p class="datAutor">@ViewBag.Libro.BioEscritor</p>
+        </div>
+        </div>
+        <div class="maslibrosautor">
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+@if(user.IdUsuario != -1){
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+     Agregar Reseña
+  </button>
+}
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Reseña</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <form Action='@Url.Action("añadirReseña")' method="post">
+            <input type="hidden" name="IdUsuario" value=@user.IdUsuario>
+            <input type="hidden" name="Username" value=@user.Username>
+            <input type="hidden" name="IdLibro" value=@ViewBag.Libro.IdLibro />
+            <div>
+              <p>Puntuacion:</p>
+              <input type="number" name="Reseña" id="Reseña" min="1" max=5 required />
+            </div>
+            <div>
+              <input type="text" name="Testo" id="Testo" placeholder="Deje aqui su reseña" required>
+            </div>
+          <button type="submit">Agregar Reseña</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ReseñasFlex">
+@foreach(ReseñaUsuario RU in ViewBag.Reseñas)
+{
+    
+        <div class="ReseñaUsuario">
+            <img src="~/img/perfil-de-usuario.webp">
+            <h1>@RU.Username</h1>
+            <h3>@RU.Reseña</h3>
+            <p>@RU.Testo</p>
+
+            @if (user.IdUsuario == RU.IdUsuario)
+            {
+                <form action='@Url.Action("eliminarReseña")' >
+                    <input type="hidden" name="Rid" value='@RU.IdReseña'>
+                    <input type="hidden" name="Uid" value='@RU.IdUsuario'>
+                    <input type="hidden" name="Lid" value='@ViewBag.Libro.IdLibro'>
+                    <button type="submit" class="btn btn-danger">Eliminar Reseña</button>
+                </form>
+            }
+        </div>
+    
+}
+</div>
+        <div class="rating_average2">
+          <div class="star-outer2">
+            <div class="star-inner2"></div>
+          </div>
+        </div>
+</body>
+</html>

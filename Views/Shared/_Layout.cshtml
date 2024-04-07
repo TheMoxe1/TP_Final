@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+@if(user.IdUsuario != -1){
+   <div class="topnav">
+      <a href='@Url.Action("inicio")'><img src="~/img/Logo.png" alt="logo" height="40px" width="60px"></a>
+      <div class="genero">
+         <a href='@Url.Action("pantallaGenero")'></a>
+      </div>
+      <span id="menuBtn">&#9776; Menu</span>
+      <input type="text" id="searchInput" placeholder="Buscar...">
+      <div id="results" class="results-container"></div>
+      <a class="divnav" href='@Url.Action("inicio")'>Home</a>
+     <a class="divnav" href='@Url.Action("Index")'>Cerrar Sesion</a>
+      <div class="genero">
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Genero
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 1 })'>Novela</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 2 })'>Realista</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 3 })'>Magia Real</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 4 })'>Realismo Mágico</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 5 })'>Novela Latinoamericana</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 6 })'>Distopía</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 7 })'>Ciencia Ficción</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 8 })'>Fantasía Épica</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 9 })'>Realismo Mágico</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 10 })'>Novela Histórica</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 11 })'>Drama Familiar</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 12 })'>Realismo Mágico</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 13 })'>Ficción Contemporánea</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 14 })'>Misterio</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 15 })'>Aventuras</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 16 })'>Thriller Psicológico</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 17 })'>Novela de Suspenso</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 18 })'>Terror</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 19 })'>Novela Romántica</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 20 })'>Ciencia Ficción Espacial</a></li>
+              </ul>
+          </div>
+      </div>
+      @* <!-- <a class="divnav" href="pantallaGenero">Generos</a>
+      <a class="divnav" href='@Url.Action("pantallaLibro")'>Plibro</a>
+      <a class="divnav" href='@Url.Action("listaSeguimiento")'>listaSeguimiento</a> --> *@
+    </div>
+  }else{
+  <div class="topnav">
+    <a href='@Url.Action("inicio")'><img src="~/img/Logo.png" alt="logo" height="40px" width="60px"></a>
+    <span id="menuBtn">&#9776; Menu</span>
+    <input type="text" id="searchInput" placeholder="Buscar...">
+    <div id="results" class="results-container"></div>
+    <a class="divnav" href='@Url.Action("inicio")'>Home</a>
+    <a class="divnav" href='@Url.Action("Index")'>Iniciar Sesion</a>
+    <div class="genero">
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Genero
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 1 })'>Novela</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 2 })'>Realista</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 3 })'>Magia Real</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 4 })'>Realismo Mágico</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 5 })'>Novela Latinoamericana</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 6 })'>Distopía</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 7 })'>Ciencia Ficción</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 8 })'>Fantasía Épica</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 9 })'>Realismo Mágico</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 10 })'>Novela Histórica</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 11 })'>Drama Familiar</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 12 })'>Realismo Mágico</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 13 })'>Ficción Contemporánea</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 14 })'>Misterio</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 15 })'>Aventuras</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 16 })'>Thriller Psicológico</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 17 })'>Novela de Suspenso</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 18 })'>Terror</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 19 })'>Novela Romántica</a></li>
+              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 20 })'>Ciencia Ficción Espacial</a></li>
+              </ul>
+          </div>
+      </div>
+    <!-- <a class="divnav" href="pantallaGenero">Generos</a>
+    <a class="divnav" href='@Url.Action("pantallaLibro")'>Plibro</a>
+    <a class="divnav" href='@Url.Action("listaSeguimiento")'>listaSeguimiento</a> -->
+  </div>
+}
+  <script src="~/js/script.js"></script>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - TPXX - Apellido</title>
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <header style="position:fixed; top: 0; margin: 0px 0px 20px 0px;">
+  </header>
+  <div style="padding:20px 10px 0px 10px;">
+    @RenderBody()
+  </div>
+
+  <footer>
+  </footer>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  <script src="~/js/peto.js" asp-append-version="true"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
