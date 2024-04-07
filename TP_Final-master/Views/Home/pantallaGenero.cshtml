@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="producto-container">
+    @if (ViewBag.LibrosDelGenero != null && ViewBag.LibrosDelGenero.Count > 0)
+    {
+        var contador = 0;
+        foreach (var libro in ViewBag.LibrosDelGenero)
+        {
+            <div class="product-card" style="float: left; margin-right: 20px;"> 
+                <div class="product-image">
+                    <img src="@libro.Tapa" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h3>@libro.Nombre</h3>
+                </div>
+            </div>
+            contador++;
+            if (contador == 5)
+            {
+                <div style="clear:both;"></div> 
+                contador = 0;
+            }
+        }
+    }
+    else
+    {
+        <p>No se encontraron libros para este género.</p>
+    }
+</div>
+
+
+
+</body>
+</html>
