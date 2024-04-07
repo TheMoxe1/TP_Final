@@ -795,6 +795,8 @@ body {
 .swiper-hero .swiper-pagination-bullet-active {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
+
+
 /*estrellas valoracion*/
 :root{
   --primary:#181736;
@@ -829,7 +831,7 @@ body {
   color: gold;
 }
 .star-outer2{
-  margin-top: -520px;
+  margin-top: -550px;
   margin-bottom: 30px;
 }
 
@@ -895,6 +897,7 @@ body {
   border-radius: 25px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
   padding: 10px;
 }
 
@@ -1017,7 +1020,7 @@ body {
 
 /*Inicio Buscador*/
 
-.results-container a{
+.results-container button{
   padding: 10px;
   margin: 10;
   box-sizing: border-box;
@@ -1035,10 +1038,11 @@ body {
   background: rgb(223, 223, 223);
   display: none;
   border-radius: 5px;
+  z-index: 10;
 }
 
 
-.results-container a {
+.results-container button {
   display: block;
   padding: 5px;
   width: 503px;
@@ -1048,11 +1052,11 @@ body {
   color: #333;
 }
 
-.results-container a:hover {color: black;}
+.results-container button:hover {color: black;}
 
-.results-container a:hover{background-color: rgb(183, 180, 180);}
+.results-container button:hover{background-color: rgb(183, 180, 180);}
 
-.results-container a:last-child {
+.results-container button:last-child {
   border-bottom: none;
 }
 

@@ -91,10 +91,6 @@ public class HomeController : Controller
         ViewBag.carousel1 = BD.obtenerLibroRandom(num1);
         ViewBag.carousel2 = BD.obtenerLibroRandom(num2);
         ViewBag.carousel3 = BD.obtenerLibroRandom(num3);
-        ViewBag.ListaGeneros = new List<List<Libro>>() ;
-        for(int e = 1; e <= 5; e++){
-            ViewBag.ListaGeneros.Add(BD.enlistarLibrosXGenero());
-        }
         ViewBag.ListaGeneros = BD.enlistarLibrosXGenero();
         ViewBag.ListaGeneros1 = BD.enlistarLibrosXGenero();
         ViewBag.ListaGeneros2 = BD.enlistarLibrosXGenero();
@@ -141,7 +137,7 @@ public class HomeController : Controller
         return promedio;
     }
 
-    public IActionResult pantallaLibro(int L, Usuario us)
+    public IActionResult pantallaLibro(int L)
     {   
         ViewBag.Reseñas = BD.enlistarReseñas(L);
         ViewBag.Libro = BD.obtenerLibro(L);
