@@ -42,6 +42,11 @@ public class HomeController : Controller
         return RedirectToAction("index");
     }
 
+    public IActionResult pantallaUsuario(){
+
+        return View("pantallaUsuario");
+    }
+
     public IActionResult registro()
     {
         ViewBag.Generos = BD.enlistarGeneros();
