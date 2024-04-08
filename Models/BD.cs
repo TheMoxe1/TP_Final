@@ -204,9 +204,17 @@ public static List<Libro> ObtenerLibrosPorGenero(int idGenero)
 
         return librosDelGenero;
     }
+
 }
 
-
+    public static List<LibrosBuscador> LibrosBuscador(){
+        List<LibrosBuscador> listaLibros = null;
+        using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT IdLibro, Nombre FROM Libro";
+            listaLibros = db.Query<LibrosBuscador>(sql).ToList();
+        }
+        return listaLibros;
+    }
 
 }
 

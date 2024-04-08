@@ -2,15 +2,19 @@
 <html lang="en">
 
 <head>
-@if(user.IdUsuario != -1){
+
    <div class="topnav">
       <a href='@Url.Action("inicio")'><img src="~/img/Logo.png" class = "logo" alt="logo" height="40px" width="60px"></a>
       <span id="menuBtn">&#9776; Menu</span>
       <input type="text" id="searchInput" placeholder="Buscar...">
       <div id="results" class="results-container"></div>
       <a class="divnav" href='@Url.Action("inicio")'>Home</a>
+      @if(user.IdUsuario != -1){
      <a class="divnav" href='@Url.Action("CerrarSesion")'>Cerrar Sesion</a>
      <a class="fotoperfil" href='@Url.Action("pantallaUsuario")'><img src="~/img/perfil-de-usuario.png" alt="logo" height="40px" width="60px"></a>
+     }else{
+     <a class="divnav" href='@Url.Action("Index")'>Iniciar Sesion</a>
+     }
       <div class="genero">
          <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,48 +48,8 @@
       <a class="divnav" href='@Url.Action("pantallaLibro")'>Plibro</a>
       <a class="divnav" href='@Url.Action("listaSeguimiento")'>listaSeguimiento</a> --> *@
     </div>
-  }else{
-    <div class="topnav">
-      <a href='@Url.Action("inicio")'><img src="~/img/Logo.png" alt="logo" height="40px" width="60px"></a>
-    <span id="menuBtn">&#9776; Menu</span>
-    <input type="text" id="searchInput" placeholder="Buscar...">
-    <div id="results" class="results-container"></div>
-    <a class="divnav" href='@Url.Action("inicio")'>Home</a>
-    <a class="divnav" href='@Url.Action("Index")'>Iniciar Sesion</a>
-    <div class="genero">
-         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Genero
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 1 })'>Novela</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 2 })'>Realista</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 3 })'>Magia Real</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 4 })'>Realismo Mágico</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 5 })'>Novela Latinoamericana</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 6 })'>Distopía</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 7 })'>Ciencia Ficción</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 8 })'>Fantasía Épica</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 9 })'>Realismo Mágico</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 10 })'>Novela Histórica</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 11 })'>Drama Familiar</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 12 })'>Realismo Mágico</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 13 })'>Ficción Contemporánea</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 14 })'>Misterio</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 15 })'>Aventuras</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 16 })'>Thriller Psicológico</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 17 })'>Novela de Suspenso</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 18 })'>Terror</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 19 })'>Novela Romántica</a></li>
-              <li><a class="dropdown-item" href='@Url.Action("pantallaGenero", new { idGenero = 20 })'>Ciencia Ficción Espacial</a></li>
-              </ul>
-          </div>
-      </div>
-    <!-- <a class="divnav" href="pantallaGenero">Generos</a>
-    <a class="divnav" href='@Url.Action("pantallaLibro")'>Plibro</a>
-    <a class="divnav" href='@Url.Action("listaSeguimiento")'>listaSeguimiento</a> -->
-  </div>
-}
+ 
+
   <script src="~/js/script.js"></script>
   
   <meta charset="utf-8" />
@@ -109,7 +73,7 @@
   <footer>
   </footer>
   <script src="~/js/site.js" asp-append-version="true"></script>
-  <script src="~/js/peto.js" asp-append-version="true"></script>
+
   @await RenderSectionAsync("Scripts", required: false)
 </body>
 

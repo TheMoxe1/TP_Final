@@ -149,6 +149,11 @@ public class HomeController : Controller
         return View();
     }
 
+    public List<LibrosBuscador> CargarBuscador(){
+        List<LibrosBuscador> LibrosBusc = new List<LibrosBuscador>();
+        LibrosBusc = BD.LibrosBuscador();
+        return LibrosBusc;
+    }
 
     public ReseñaUsuario VerReseña(int idL)
     {
@@ -197,8 +202,6 @@ public class HomeController : Controller
     public void BuscarGeneroLibro(int x){
         ViewBag.libroG = BD.BuscarGLibro(x);
     }
-
-
 
 
 

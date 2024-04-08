@@ -3,6 +3,10 @@ const resultsList = document.getElementById('results');
 let libros = [];
 
 
+
+
+
+
 fetch('/api/buscador/libros')
   .then(response => response.json())
   .then(data => {
