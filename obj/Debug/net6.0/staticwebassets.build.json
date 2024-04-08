@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KqOWij5q0i0TQM+lgpmlEFPT8BU02iBNQqBKb6oa+9Y=",
+  "Hash": "HvsFjr73X/deaqlDcHlBhi20GCbpm6H1Op2GtMom9RI=",
   "Source": "TPBase",
   "BasePath": "_content/TPBase",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "TPBase\\wwwroot",
       "Source": "TPBase",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\bundle\\TPBase.styles.css",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\bundle\\TPBase.styles.css",
       "SourceId": "TPBase",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "TPBase.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\PC\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\bundle\\TPBase.styles.css"
+      "OriginalItemSpec": "C:\\Users\\47434260\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\bundle\\TPBase.styles.css"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TPBase.bundle.scp.css",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TPBase.bundle.scp.css",
       "SourceId": "TPBase",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "TPBase.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\PC\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TPBase.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\47434260\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TPBase.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\css\\site.css",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\favicon.ico",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\img\\arrow.png",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\arrow.png",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "img/arrow.png",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\img\\arrow.png"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\img\\jkRowling.jpg",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\jkRowling.jpg",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "img/jkRowling.jpg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\img\\jkRowling.jpg"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\img\\jrrTolkin.jpg",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\jrrTolkin.jpg",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "img/jrrTolkin.jpg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\img\\jrrTolkin.jpg"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\img\\LibroBase.PNG",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\LibroBase.PNG",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "img/LibroBase.PNG",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\img\\LibroBase.PNG"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\img\\Logo.png",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\Logo.png",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "img/Logo.png",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Logo.png"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\img\\lotr.jpg",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\lotr.jpg",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "img/lotr.jpg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\img\\lotr.jpg"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\img\\perfil-de-usuario.webp",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\perfil-de-usuario.webp",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "img/perfil-de-usuario.webp",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\img\\perfil-de-usuario.webp"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\img\\prisioneroAzkaban.jpg",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\prisioneroAzkaban.jpg",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "img/prisioneroAzkaban.jpg",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\img\\prisioneroAzkaban.jpg"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\js\\script.js",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\js\\script.js",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "js/script.js",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
-      "Identity": "C:\\Users\\PC\\TP_Final\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\47434260\\TP_Final\\wwwroot\\js\\site.js",
       "SourceId": "TPBase",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\TP_Final\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\47434260\\TP_Final\\wwwroot\\",
       "BasePath": "_content/TPBase",
       "RelativePath": "js/site.js",
       "AssetKind": "All",

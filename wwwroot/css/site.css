@@ -10,6 +10,13 @@ html {
   }
 }
 
+img.fotoperfil{
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  border-radius: 60%
+}
+
 body {
   margin: 20px 60px 0px 20px;
 }
@@ -124,7 +131,7 @@ float: left;
   height: 35px;
 }
 
-.topnav img{
+.logo{
   margin-left: 300px; 
   margin-right: 380px;
 }
