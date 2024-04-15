@@ -138,7 +138,6 @@ C:\Users\47434260\TP_Final\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\47434260\TP_Final\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\47434260\TP_Final\obj\Debug\net6.0\scopedcss\bundle\TPBase.styles.css
 C:\Users\47434260\TP_Final\obj\Debug\net6.0\scopedcss\projectbundle\TPBase.bundle.scp.css
-C:\Users\47434260\TP_Final\obj\Debug\net6.0\TPBase.csproj.CopyComplete
 C:\Users\47434260\TP_Final\obj\Debug\net6.0\TPBase.dll
 C:\Users\47434260\TP_Final\obj\Debug\net6.0\refint\TPBase.dll
 C:\Users\47434260\TP_Final\obj\Debug\net6.0\TPBase.pdb
@@ -184,3 +183,5 @@ C:\Users\47434260\Desktop\TP_Final\obj\Debug\net6.0\refint\TPBase.dll
 C:\Users\47434260\Desktop\TP_Final\obj\Debug\net6.0\TPBase.pdb
 C:\Users\47434260\Desktop\TP_Final\obj\Debug\net6.0\TPBase.genruntimeconfig.cache
 C:\Users\47434260\Desktop\TP_Final\obj\Debug\net6.0\ref\TPBase.dll
+C:\Users\47434260\TP_Final\obj\Debug\net6.0\TPBase.sourcelink.json
+C:\Users\47434260\TP_Final\obj\Debug\net6.0\TPBase.csproj.Up2Date

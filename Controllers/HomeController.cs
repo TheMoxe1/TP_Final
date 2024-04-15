@@ -27,13 +27,12 @@ public class HomeController : Controller
     }
 
     public IActionResult pantallaGenero(int idGenero)
-{
-    var librosDelGenero = BD.ObtenerLibrosPorGenero(idGenero); // Obtener los libros del género especificado
-
-    ViewBag.LibrosDelGenero = librosDelGenero;
-
-    return View("pantallaGenero");
-}
+    {
+        var librosDelGenero = BD.ObtenerLibrosPorGenero(idGenero); // Obtener los libros del género especificado
+        ViewBag.Genero = BD.ObtenerGenero(idGenero);
+        ViewBag.LibrosDelGenero = librosDelGenero;
+        return View("pantallaGenero");
+    }
 
     public IActionResult CerrarSesion()
     {

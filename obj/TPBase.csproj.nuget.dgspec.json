@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47434260\\Desktop\\TP_Final\\TPBase.csproj": {}
+    "C:\\Users\\47434260\\TP_Final\\TPBase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47434260\\Desktop\\TP_Final\\TPBase.csproj": {
+    "C:\\Users\\47434260\\TP_Final\\TPBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47434260\\Desktop\\TP_Final\\TPBase.csproj",
+        "projectUniqueName": "C:\\Users\\47434260\\TP_Final\\TPBase.csproj",
         "projectName": "TPBase",
-        "projectPath": "C:\\Users\\47434260\\Desktop\\TP_Final\\TPBase.csproj",
+        "projectPath": "C:\\Users\\47434260\\TP_Final\\TPBase.csproj",
         "packagesPath": "C:\\Users\\47434260\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47434260\\Desktop\\TP_Final\\obj\\",
+        "outputPath": "C:\\Users\\47434260\\TP_Final\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

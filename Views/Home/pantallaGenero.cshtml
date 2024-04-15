@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body class = "LibroXGenero">
   <div class="producto-container">
     @if (ViewBag.LibrosDelGenero != null && ViewBag.LibrosDelGenero.Count > 0)
     {
         var contador = 0;
+        <h1>@ViewBag.Genero</h1>
         foreach (var libro in ViewBag.LibrosDelGenero)
         {
             <div class="product-card" style="float: left; margin-right: 20px;"> 
                 <div class="product-image">
-                    <img src="@libro.Tapa" class="product-thumb" alt="">
-                    <button class="card-btn">add to wishlist</button>
+                    <a class="dropdown-item" href='@Url.Action("pantallaLibro", new{L = @libro.IdLibro})'><img src="@libro.Tapa" class="product-thumb" alt=""></a>  
                 </div>
                 <div class="product-info">
                     <h3>@libro.Nombre</h3>

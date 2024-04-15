@@ -164,9 +164,9 @@ public static string cargar(int idUsuario){
 public static LibroConAutor BuscarGLibro(int idGenero){
     LibroConAutor G = null;
       using (SqlConnection db = new SqlConnection(_connectionString)){
-        string sql = "SELECT L.IdLibro, L.Nombre, L.Tapa FROM Libro L WHERE idGenero = @idGenero";
-        G = db.QueryFirstOrDefault<LibroConAutor>(sql, new { cIdGenero = idGenero });
-}
+      string sql = "SELECT L.IdLibro, L.Nombre, L.Tapa FROM Libro L WHERE idGenero = @idGenero";
+      G = db.QueryFirstOrDefault<LibroConAutor>(sql, new { cIdGenero = idGenero });
+    }
 return G;
 }   
 
@@ -177,7 +177,7 @@ public static List<Libro> ObtenerLibrosPorGenero(int idGenero)
         connection.Open();
 
         // Consulta SQL para seleccionar los libros que coinciden con el idGenero en alguna de las columnas Genero1, Genero2, Genero3, Genero4 o Genero5
-        var commandText = "SELECT Nombre, Tapa " +
+        var commandText = "SELECT IdLibro, Nombre, Tapa " +
                           "FROM Libro " +
                           "WHERE Genero1 = @IdGenero OR Genero2 = @IdGenero OR Genero3 = @IdGenero OR Genero4 = @IdGenero OR Genero5 = @IdGenero";
 
@@ -206,6 +206,15 @@ public static List<Libro> ObtenerLibrosPorGenero(int idGenero)
     }
 
 }
+
+    public static string ObtenerGenero(int idGenero){
+        string nGenero = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT Nombre FROM Generos WHERE IdGenero = @cidGenero";
+            nGenero = db.QueryFirstOrDefault<string>(sql, new{cidGenero = idGenero});
+        }
+        return nGenero;
+    }
 
     public static List<LibrosBuscador> LibrosBuscador(){
         List<LibrosBuscador> listaLibros = null;
