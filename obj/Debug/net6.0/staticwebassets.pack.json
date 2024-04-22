@@ -1,59 +1,59 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TPBase.bundle.scp.css",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TPBase.bundle.scp.css",
       "PackagePath": "staticwebassets\\TPBase.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\LibroBase.PNG",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\LibroBase.PNG",
       "PackagePath": "staticwebassets\\img\\LibroBase.PNG"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\Logo.png",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\Logo.png",
       "PackagePath": "staticwebassets\\img\\Logo.png"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\arrow.png",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\arrow.png",
       "PackagePath": "staticwebassets\\img\\arrow.png"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\jkRowling.jpg",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\jkRowling.jpg",
       "PackagePath": "staticwebassets\\img\\jkRowling.jpg"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\jrrTolkin.jpg",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\jrrTolkin.jpg",
       "PackagePath": "staticwebassets\\img\\jrrTolkin.jpg"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\lotr.jpg",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\lotr.jpg",
       "PackagePath": "staticwebassets\\img\\lotr.jpg"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\perfil-de-usuario.png",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\perfil-de-usuario.png",
       "PackagePath": "staticwebassets\\img\\perfil-de-usuario.png"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\perfil-de-usuario.webp",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\perfil-de-usuario.webp",
       "PackagePath": "staticwebassets\\img\\perfil-de-usuario.webp"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\img\\prisioneroAzkaban.jpg",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\img\\prisioneroAzkaban.jpg",
       "PackagePath": "staticwebassets\\img\\prisioneroAzkaban.jpg"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\js\\script.js",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
-      "Id": "C:\\Users\\47434260\\TP_Final\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\47435815\\Desktop\\TP_Final\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {

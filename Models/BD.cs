@@ -170,42 +170,15 @@ public static LibroConAutor BuscarGLibro(int idGenero){
 return G;
 }   
 
-public static List<Libro> ObtenerLibrosPorGenero(int idGenero)
-{
-    using (var connection = new SqlConnection(_connectionString))
-    {
-        connection.Open();
-
-        // Consulta SQL para seleccionar los libros que coinciden con el idGenero en alguna de las columnas Genero1, Genero2, Genero3, Genero4 o Genero5
-        var commandText = "SELECT IdLibro, Nombre, Tapa " +
-                          "FROM Libro " +
-                          "WHERE Genero1 = @IdGenero OR Genero2 = @IdGenero OR Genero3 = @IdGenero OR Genero4 = @IdGenero OR Genero5 = @IdGenero";
-
-        // Crear el comando SQL con la consulta y parámetros
-        var command = new SqlCommand(commandText, connection);
-        command.Parameters.AddWithValue("@IdGenero", idGenero);
-
-        var librosDelGenero = new List<Libro>();
-
-        // Ejecutar la consulta y leer los resultados
-        using (var reader = command.ExecuteReader())
-        {
-            while (reader.Read())
-            {
-                // Crear un nuevo objeto Libro y agregarlo a la lista librosDelGenero
-                var libro = new Libro
-                {
-                    Nombre = reader.GetString(reader.GetOrdinal("Nombre")),
-                    Tapa = reader.GetString(reader.GetOrdinal("Tapa"))
-                };
-                librosDelGenero.Add(libro);
-            }
+public static List<Libro> ObtenerLibrosPorGenero(int idGenero){
+        List<Libro> ListaLibroPGenero = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT IdLibro, Nombre, Tapa FROM Libro WHERE Genero1 = @IdGenero OR Genero2 = @IdGenero OR Genero3 = @IdGenero OR Genero4 = @IdGenero OR Genero5 = @IdGenero";
+            ListaLibroPGenero = db.Query<Libro>(sql, new{IdGenero = idGenero}).ToList();
         }
-
-        return librosDelGenero;
+        return ListaLibroPGenero;
     }
 
-}
 
     public static string ObtenerGenero(int idGenero){
         string nGenero = null;
